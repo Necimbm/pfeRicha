@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Switch, Box } from "@material-ui/core";
 import { FormControlLabel } from '@material-ui/core';
-
+import "./accountpro.css";
 import {
   BoldLink,
   BoxContainer,
@@ -89,7 +89,7 @@ export function Accountpro(props) {
       {[0].map((sectionId) => (
         <li key={`section-${sectionId}`} className={classes.listSection}>
           <ul className={classes.ul}>
-          <Input2 type="checkbox" />
+         <tr>artisan ou fournisseur ?<Input2 type="checkbox" /></tr> 
           </ul>
         </li>
       ))}
