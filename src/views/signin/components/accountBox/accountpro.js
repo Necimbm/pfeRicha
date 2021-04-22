@@ -13,6 +13,7 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
+import "./accountstyle.css"
 
 import { makeStyles } from '@material-ui/core/styles';
 import {List} from '@material-ui/core';
