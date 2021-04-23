@@ -29,7 +29,7 @@ export function SignupForm(props) {
       <FormControlLabel control={<Switch size="small" color="default" />} onClick={switchToAccountPro} label={<Box component="div" fontSize={12} fontFamily="Arial" color="orange"> pro </Box>}/>    
       <Marginer direction="vertical" margin={10} />
       <SubmitButton type="submit">s'inscrire</SubmitButton>
-      <Marginer direction="vertical" margin="1em" />
+      <Marginer direction="vertical" margin="10em" />
       <MutedLink href="#">
         Vous avez déja un compte ?
         <BoldLink href="#" onClick={switchToSignin}>

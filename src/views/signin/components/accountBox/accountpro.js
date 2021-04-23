@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { Switch, Box } from "@material-ui/core";
+import { Switch, Box, Grid } from "@material-ui/core";
 import { FormControlLabel } from '@material-ui/core';
-import "./accountpro.css";
+import "./accountprostyle.css";
 import {
   BoldLink,
   BoxContainer,
@@ -13,8 +13,7 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
-import "../accountBox/";
-
+import "./";
 import { makeStyles } from '@material-ui/core/styles';
 import {List} from '@material-ui/core';
 
@@ -38,10 +37,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function Accountpro(props) {
+export function Accountpro() {
   const { switchToSignup2 } = useContext(AccountContext);
   const { switchToSignin } = useContext(AccountContext);
-  const [state, setState] = React.useState({
+  const [state] = React.useState({
     checkedA: true,
     checkedB: true,
   });
@@ -51,50 +50,25 @@ export function Accountpro(props) {
     <BoxContainer>
     
       <FormContainer>
-      <List className={classes.root} subheader={<li />}>
-      {[0].map((sectionId) => (
-        <li key={`section-${sectionId}`} className={classes.listSection}>
-          <ul className={classes.ul}>
-          <Input type="text" placeholder="Nom Complet" />
-          </ul>
-        </li>
-      ))}
-      {[0].map((sectionId) => (
-        <li key={`section-${sectionId}`} className={classes.listSection}>
-          <ul className={classes.ul}>
-          <Input type="email" placeholder="Email/Numéro de téléphone" />
-          </ul>
-        </li>
-      ))}
-      {[0].map((sectionId) => (
-        <li key={`section-${sectionId}`} className={classes.listSection}>
-          <ul className={classes.ul}>
-          <Input type="password" placeholder="Mot de passe" />
-          </ul>
-        </li>
-      ))}
-      {[0].map((sectionId) => (
-        <li key={`section-${sectionId}`} className={classes.listSection}>
-          <ul className={classes.ul}>
-          <Input type="password" placeholder="Confirmer le mot de passe" />
-          </ul>
-        </li>
-      ))}
-      {[0].map((sectionId) => (
-        <li key={`section-${sectionId}`} className={classes.listSection}>
-          <ul className={classes.ul}>
-          <Input type="password" placeholder="entrer votre numéro de batinde" />
-          </ul>
-        </li>
-      ))}
-      {[0].map((sectionId) => (
-        <li key={`section-${sectionId}`} className={classes.listSection}>
-          <ul className={classes.ul}>
-         <tr>artisan ou fournisseur ?<Input2 type="checkbox" /></tr> 
-          </ul>
-        </li>
-      ))}
-    </List> 
+        <div className="grid_container">
+      <div className="grid_item"><Input type="text" placeholder="Nom Complet" />
+          <Input  type="email" placeholder="Email/Numéro de téléphone" />
+          <Input  type="password" placeholder="Mot de passe" /> 
+          <Input  type="password" placeholder="Confirmer le mot de passe" />
+          <Input  type="password" placeholder="entrer votre numéro de batinde" />
+         <tr  ><p>artisan ou fournisseur ?</p></tr> </div> 
+         
+         <div className="grid_item"><Input type="text" placeholder="Nom Complet" />
+          <Input  type="email" placeholder="Email/Numéro de téléphone" />
+          <Input  type="password" placeholder="Mot de passe" /> 
+          <Input  type="password" placeholder="Confirmer le mot de passe" />
+          <Input  type="password" placeholder="entrer votre numéro de batinde" />
+         <tr  ><p>artisan ou fournisseur ?</p></tr> </div> 
+         </div>
+
+         
+        
+
     
       </FormContainer>
       <FormControlLabel control={<Switch checked={state.checkedA} size="small" color="default"/>} onClick={switchToSignup2} label={<Box component="div" fontSize={12} fontFamily="Arial" color="orange"> pro </Box>}/>

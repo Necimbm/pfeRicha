@@ -55,8 +55,7 @@ export const Input = styled.input`
   }
 `;
 export const Input2 = styled.input`
-weight:50%;
-margin-left: 120px;
+
 `
 
 export const SubmitButton = styled.button`
