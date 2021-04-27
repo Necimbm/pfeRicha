@@ -38,7 +38,7 @@ class ContactForm extends Component {
     });
   }
   render() {
-    let buttonText = this.state.status;
+
     return (      
         <form onSubmit={this.handleSubmit.bind(this)} method="POST">
             <div>
@@ -70,7 +70,7 @@ class ContactForm extends Component {
                 required
             />
             </div>
-            <button type="submit">{buttonText}</button>
+            <button type="submit">Submit</button>
         </form>      
     );
 }

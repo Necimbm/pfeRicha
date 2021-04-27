@@ -1,9 +1,10 @@
 import product1 from '../../images/product-1.jpg';
 import product2 from '../../images/product2.jpg';
 import product3 from '../../images/product-3.jpg';
-import sweet1 from '../../images/sweet3.jpg';
-import sweet2 from '../../images/sweet-2.jpg';
-import sweet3 from '../../images/sweet-3.jpg';
+import Zarbia from '../../images/personnaliser1.jpg';
+import braclet from '../../images/braclet.jpg';
+
+
 
 export const productData = [
   {
@@ -37,30 +38,22 @@ export const productData = [
 
 export const productDataTwo = [
   {
-    img: sweet2,
-    alt: 'Donuts',
-    name: 'Doughlicious',
+    img: Zarbia,
+    alt: 'Margoum',
+    name: 'Margoum Assil ',
     desc:
-      'Belgian chocolate glazed donuts covered in icing with sprinkles on top',
-    price: '$9.99',
-    button: 'Add to Cart'
+      'Zarbia margoum personnalisé',
+    price: 'à partir de 1000dt',
+    button: 'Ajouter au panier'
   },
   {
-    img: sweet3,
-    alt: 'Ice Cream',
-    name: 'Caramel Wonder',
+    img: braclet,
+    alt: 'Braclet',
+    name: 'Braclet ',
     desc:
-      'Vanilla ice cream covered with caramel and chocolate glaze topped with a coco stick',
-    price: '$12.99',
-    button: 'Add to Cart'
+      'Braclet en or jaune personnalisée',
+    price: 'à partir de 2000dt',
+    button: 'Ajouter au panier'
   },
-  {
-    img: sweet1,
-    alt: 'Brownie',
-    name: 'Brownie Bunch',
-    desc:
-      'Double fudge brownie squares topped with white chocolate pieces and macadamia nuts',
-    price: '$9.99',
-    button: 'Add to Cart'
-  }
+ 
 ];

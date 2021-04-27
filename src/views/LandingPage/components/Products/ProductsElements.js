@@ -58,7 +58,7 @@ export const ProductPrice = styled.p`
   font-size: 2rem;
 `;
 
-export const ProductButton = styled.button`
+export const ProductButton = styled.a`
   font-size: 1rem;
   padding: 1rem 3rem;
   border: none;

@@ -14,7 +14,7 @@ function acceuil() {
       <Hero />
       <Products heading='Votre meilleur choix' data={productData} />
       <Feature />
-      <Products heading='Sweet Treats for You' data={productDataTwo} />
+      <Products heading='Personnaliser votre commande' data={productDataTwo} />
       <Footer />
     </Router>
   );
