@@ -6,6 +6,7 @@ import {
   FormContainer,
   Input,
   MutedLink,
+  BoldLink2,
   
 } from "./common";
 import { Marginer } from "../marginer";
@@ -33,7 +34,11 @@ export function LoginForm(props) {
         <BoldLink href="#" onClick={switchToSignup}>
           Inscrivez-vous
         </BoldLink>
+       
       </MutedLink>
+      <BoldLink2 href="/" >
+          Acceuil
+        </BoldLink2>
     </BoxContainer>
   );
 }

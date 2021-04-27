@@ -17,9 +17,9 @@ const Sidebar = ({ isOpen, toggle }) => {
         <CloseIcon />
       </Icon>
       <SidebarMenu>
-        <SidebarLink to='/signin'> se connecter</SidebarLink>
+        <SidebarLink href='/signin'> se connecter</SidebarLink>
         <SidebarLink>contacter-nous</SidebarLink>
-        <SidebarLink to='/'>A propo</SidebarLink>
+        <SidebarLink href='/'>A propo</SidebarLink>
       </SidebarMenu>
       <SideBtnWrap>
       <SidebarRoute>order</SidebarRoute>

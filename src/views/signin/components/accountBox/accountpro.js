@@ -66,21 +66,11 @@ export function Accountpro() {
          <tr  ><p>artisan ou fournisseur ?</p></tr> </div> 
          </div>
 
-         
-        
-
-    
       </FormContainer>
       <FormControlLabel control={<Switch checked={state.checkedA} size="small" color="default"/>} onClick={switchToSignup2} label={<Box component="div" fontSize={12} fontFamily="Arial" color="orange"> pro </Box>}/>
-      <Marginer direction="vertical" margin={9} />
+      <Marginer direction="vertical" margin={0} />
       <SubmitButton type="submit">s'inscrire</SubmitButton>
       <Marginer direction="vertical" margin="1em" />
-      <MutedLink href="#">
-        Vous avez déja un compte ?
-        <BoldLink href="#" onClick={switchToSignin}>
-          Se connecter
-        </BoldLink>
-      </MutedLink>
     </BoxContainer>
   );
 }

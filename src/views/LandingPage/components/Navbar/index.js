@@ -1,15 +1,19 @@
 import React from 'react';
-import { Nav, NavLink, NavIcon, Bars,Bars2 } from './NavbarElements';
+import SearchBar from '../Searchbar';
+import { Nav,   NavSearch, NavLink, NavIcon, Bars,Bars2, Search } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
   return (
     <>
       <Nav>
-        <NavLink to='/'>ريشة <Bars2/></NavLink>
+        <NavSearch>
+          <Search/>
+          <SearchBar/>
+          </NavSearch>        
         <NavIcon onClick={toggle}>
-          <p>Menu</p>
+          Menu
           <Bars />
-        </NavIcon>
+        </NavIcon>  
       </Nav>
     </>
   );

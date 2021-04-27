@@ -16,7 +16,7 @@ export const BoxContainer = styled.div`
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: absolute;
   overflow: hidden;
-  margin-top:500px;
+  margin-top:490px;
   
 `;
 export const BoxContainer2 = styled.div`
@@ -32,6 +32,7 @@ export const BoxContainer2 = styled.div`
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   position: relative;
   overflow: hidden;
+  margin:0;
 `;
 const TopContainer = styled.div`
   width: 300px;
@@ -40,7 +41,7 @@ const TopContainer = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 3em ;
-  padding-bottom: 3%;
+  padding-bottom: 0%;
   
 `;
 
@@ -65,10 +66,11 @@ const BackDrop2 = styled(motion.div)`
   flex-direction: column;
   border-radius: 80%;
   transform: rotate(80deg);
-  top: -450px;
+  top: -440px;
   left: -10px;
   background: rgb(121,99,9);
 background: linear-gradient(90deg, rgba(121,99,9,1) 0%, rgba(247,211,8,1) 100%);`;
+
 const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
@@ -80,6 +82,7 @@ const HeaderContainer2 = styled.div`
   display: flex;
   flex-direction: column;
   align-items:center;
+  margin-top:30px;
   
   `;
   

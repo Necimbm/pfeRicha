@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const BoxContainer = styled.div`
-  weight: 100%;
-  height:100%;
+  weight: 50%;
+  height:50%;
   display: flex;
   flex-direction:column;
   align-items: center;
-  margin-top: 0px;
+  
 `;
 
 export const FormContainer = styled.form`
-  width: 100%;
+  width: 80%;
+  margin:10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,11 +33,18 @@ export const BoldLink = styled.a`
   text-decoration: none;
   margin: 0 4px;
 `;
+export const BoldLink2 = styled.a`
+  font-size: 11px;
+  color:red;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 20px 4px 0 4px;
+`;
 
 
 export const Input = styled.input`
   width: 100%;
-  height: 42px;
+  height: 35px;
   outline: none;
   border: 1px solid rgba(200, 200, 200, 0.3);
   padding: 0px 10px;
@@ -59,8 +67,8 @@ export const Input2 = styled.input`
 `
 
 export const SubmitButton = styled.button`
-  width: 90%;
-  padding: 5px 20%;
+  width: 10rem;
+  padding: 5px 5px;
   color: #fff;
   font-size: 15px;
   font-weight: 300;
@@ -69,6 +77,7 @@ export const SubmitButton = styled.button`
   cursor:pointer;
   transition: all, 240ms ease-in-out;
   background: rgb(247,211,8,1);
+  margin:15px;
 
   &:hover {
     filter: brightness(0.9);

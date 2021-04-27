@@ -2,11 +2,22 @@ import styled from 'styled-components';
 import ImgBg from '../../images/richabg.jpg';
 
 export const HeroContainer = styled.div`
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+  background: linear-gradient(to right, #2d132c, rgba(0, 0, 0, 0)),
     url(${ImgBg});
   height: 100vh;
+  width : 100%;
   background-position: center;
   background-size: cover;
+  z-index:-1;
+  position:fixed;
+`;
+export const HeroContainer2 = styled.div`
+
+  height: 100vh;
+  width : 100%;
+  background-position: center;
+  background-size: cover;
+ 
 `;
 
 export const HeroContent = styled.div`
@@ -20,7 +31,7 @@ export const HeroItems = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 100vh;
+  height: 60vh;
   max-height: 100%;
   padding: 0 2rem;
   width: 650px;
