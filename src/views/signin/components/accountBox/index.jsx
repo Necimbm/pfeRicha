@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
 import {Accountpro} from "./accountpro";
+import { Bars } from "../../../LandingPage/components/Navbar/NavbarElements";
 
 export const BoxContainer = styled.div`
   weight: 100%;
@@ -21,8 +22,8 @@ export const BoxContainer = styled.div`
 `;
 export const BoxContainer2 = styled.div`
   
-  width:500px;
-  height: 500px;
+  width:800px;
+  height: 450px;
   display: flex;
   align-items:center;
   justify-content:center;
@@ -36,12 +37,11 @@ export const BoxContainer2 = styled.div`
 `;
 const TopContainer = styled.div`
   width: 300px;
-  height: 150px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 0 3em ;
-  padding-bottom: 0%;
   
 `;
 
@@ -59,17 +59,16 @@ const BackDrop = styled(motion.div)`
 background: linear-gradient(90deg, rgba(121,99,9,1) 0%, rgba(247,211,8,1) 100%);`;
 
 const BackDrop2 = styled(motion.div)`
-  width: 400px;
-  height: 800px;
+  width: 900px;
+  height: 450px;
   position: absolute;
   display: flex;
   flex-direction: column;
-  border-radius: 80%;
-  transform: rotate(80deg);
-  top: -440px;
-  left: -10px;
-  background: rgb(121,99,9);
-background: linear-gradient(90deg, rgba(121,99,9,1) 0%, rgba(247,211,8,1) 100%);`;
+  border-radius: 0 0 100% 100%;
+  transform: rotate(-5deg);
+  top: -300px;
+background: linear-gradient(110deg, rgba(121,80,1,0.5) 0%, rgba(247,211,8,1) 100%);
+`;
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -82,7 +81,7 @@ const HeaderContainer2 = styled.div`
   display: flex;
   flex-direction: column;
   align-items:center;
-  margin-top:30px;
+  margin-top:50px;
   
   `;
   
@@ -110,7 +109,7 @@ const HeaderText2 = styled.h2`
 
 `;
 const HeaderCheckmark = styled.h2`
-padding-right: 1em;
+padding-right: 0.5em;
   font-size: 30px;
   font-weight: 400;
   line-height: 1.20;
@@ -147,6 +146,7 @@ const InnerContainer = styled.div`
   flex-direction: column;
   padding: 0 1.3em  ;
   padding-top: 4em;
+  margin-bottom:1rem;
 `;
 
 const backdropVariants = {
@@ -157,10 +157,24 @@ const backdropVariants = {
     transform: "rotate(60deg)",
   },
   collapsed: {
-    width: "160%",
-    height: "550px",
+    width: "500px",
+    height: "600px",
     borderRadius: "50%",
-    transform: "rotate(60deg)",
+    transform: "rotate(10deg)",
+  },
+};
+const backdropVariants2 = {
+  expanded: {
+    width: "1000px",
+    height: "2000px",
+    borderRadius: "0 0 100% 100% ",
+    transform: "rotate(-10)",
+  },
+  collapsed: {
+    width: "1000px",
+    height: "450px",
+    borderRadius: "0 0 100% 100%",
+    transform: "rotate(-10deg)",
   },
 };
 
@@ -169,6 +183,7 @@ const expandingTransition = {
   duration: 2.3,
   stiffness: 30,
 };
+
 
 export function AccountBox(props) {
   const [isExpanded, setExpanded] = useState(false);
@@ -188,7 +203,7 @@ export function AccountBox(props) {
     }, 1100);
   };
   const switchToSignup2 = () => {
-    
+    playExpandingAnimation();
     setTimeout(() => {
       setActive("signup");
     }, 500);
@@ -201,7 +216,7 @@ export function AccountBox(props) {
     }, 400);
   }
   const switchToAccountPro = () => {
-    
+    playExpandingAnimation();
       setTimeout(() => {
         setActive("accountpro");
       }, 500);
@@ -249,10 +264,13 @@ export function AccountBox(props) {
           
           {active === "accountpro" && (
            <BoxContainer2>
-             <BackDrop2/>
+             <BackDrop2   initial={false}
+            animate={isExpanded ? "expanded" : "collapsed"}
+            variants={backdropVariants2}
+            transition={expandingTransition}/>
            <TopContainer>
              <HeaderContainer2>
-               <HeaderCheckmark>✔</HeaderCheckmark>
+               <HeaderCheckmark> <Bars/></HeaderCheckmark>
               <HeaderText2>Compte Pro </HeaderText2>
               <SmallText2> Merci de s'inscrire !</SmallText2>
             </HeaderContainer2>

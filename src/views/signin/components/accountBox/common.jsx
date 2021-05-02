@@ -10,12 +10,12 @@ export const BoxContainer = styled.div`
 `;
 
 export const FormContainer = styled.form`
-  width: 80%;
-  margin:10px;
+  width: 50px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.19);
+ 
   
 `;
 
@@ -43,14 +43,16 @@ export const BoldLink2 = styled.a`
 
 
 export const Input = styled.input`
-  width: 100%;
+  width: 230px;
   height: 35px;
   outline: none;
-  border: 1px solid rgba(200, 200, 200, 0.3);
-  padding: 0px 10px;
-  border-bottom: 1.4px solid transparent;
+  border: 1px solid rgba(200, 200, 200, 0.75);
+  padding: 0px 5px;
+
   transition: all 200ms ease-in-out;
   font-size: 12px;
+  margin: 0.5rem 1rem;
+  margin-bottom: 1rem;
   &::placeholder {
     color: rgba(200, 200, 200, 1);
   }
@@ -62,9 +64,6 @@ export const Input = styled.input`
     border-bottom: 2px solid rgb(241, 196, 15);
   }
 `;
-export const Input2 = styled.input`
-
-`
 
 export const SubmitButton = styled.button`
   width: 10rem;

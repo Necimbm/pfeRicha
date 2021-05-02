@@ -22,7 +22,7 @@ app.post("/contact", (req, res) => {
   const userName = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
-
+console.log(userName,email,message );
   const data = {
     members: [{
       message: message,  
