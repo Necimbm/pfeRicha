@@ -46,29 +46,18 @@ const TopContainer = styled.div`
 `;
 
 const BackDrop = styled(motion.div)`
-  width: 160%;
-  height: 650px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  border-radius: 60%;
-  transform: rotate(80deg);
-  top: -350px;
-  left: -70px;
-  background: rgb(121,99,9);
-background: linear-gradient(90deg, rgba(121,99,9,1) 0%, rgba(247,211,8,1) 100%);`;
-
-const BackDrop2 = styled(motion.div)`
-  width: 900px;
-  height: 450px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  border-radius: 0 0 100% 100%;
-  transform: rotate(-5deg);
-  top: -300px;
-background: linear-gradient(110deg, rgba(121,80,1,0.5) 0%, rgba(247,211,8,1) 100%);
+width:800px;
+height: 650px;
+position: absolute;
+display: flex;
+flex-direction: column;
+border-radius: 0 0 100% 100%;
+transform: rotate(-5deg);
+top: -300px;
+background: linear-gradient(110deg, rgb(247,211,8,2) 0%, rgba(2411,211,80,1) 100%);
 `;
+
+
 
 const HeaderContainer = styled.div`
   width: 100%;
@@ -149,28 +138,15 @@ const InnerContainer = styled.div`
   margin-bottom:1rem;
 `;
 
-const backdropVariants = {
-  expanded: {
-    width: "233%",
-    height: "900px",
-    borderRadius: "20%",
-    transform: "rotate(60deg)",
-  },
-  collapsed: {
-    width: "500px",
-    height: "600px",
-    borderRadius: "50%",
-    transform: "rotate(10deg)",
-  },
-};
 const backdropVariants2 = {
   expanded: {
     width: "1000px",
-    height: "2000px",
+    height: "1000px",
     borderRadius: "0 0 100% 100% ",
     transform: "rotate(-10)",
   },
   collapsed: {
+    right:"-200px",
     width: "1000px",
     height: "450px",
     borderRadius: "0 0 100% 100%",
@@ -231,7 +207,7 @@ export function AccountBox(props) {
       <BackDrop
             initial={false}
             animate={isExpanded ? "expanded" : "collapsed"}
-            variants={backdropVariants}
+            variants={backdropVariants2}
             transition={expandingTransition}
           />
          {active === "signin" && (
@@ -264,7 +240,7 @@ export function AccountBox(props) {
           
           {active === "accountpro" && (
            <BoxContainer2>
-             <BackDrop2   initial={false}
+             <BackDrop   initial={false}
             animate={isExpanded ? "expanded" : "collapsed"}
             variants={backdropVariants2}
             transition={expandingTransition}/>

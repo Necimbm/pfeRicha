@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SearchBar = ({keyword,setKeyword}) => {
-  const BarStyling = {color:"black", width:"15rem", height:"2rem",margin:"1rem",background:"white", opacity:"50%", border:"none", padding:"0.5rem"};
+  const BarStyling = {color:"black", width:"15rem", height:"1.5rem",margin:"1rem",background:"white", opacity:"50%", border:"none", padding:"0.5rem"};
   return (
     <input 
      style={BarStyling}

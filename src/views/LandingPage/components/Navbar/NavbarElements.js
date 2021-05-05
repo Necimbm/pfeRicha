@@ -73,7 +73,7 @@ export const Bars2 = styled(FaFeatherAlt)`
   
 `;
 export const Search = styled(FaSearch)`
-  font-size: 2rem;
+  font-size: 1.5rem;
   transform: translate(-50%, -15%);
   margin-top:1rem;
   margin-left:3rem;

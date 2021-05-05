@@ -25,8 +25,8 @@ export function SignupForm(props) {
         <Input type="email" placeholder="Email/Numéro de téléphone" />
         <Input type="password" placeholder="Mot de passe" />
         <Input type="password" placeholder="Confirmer le mot de passe" /> 
-      </FormContainer>  
-      <FormControlLabel control={<Switch size="small" color="default" />} onClick={switchToAccountPro} label={<Box component="div" fontSize={12} fontFamily="Arial" color="orange"> pro </Box>}/>    
+        <FormControlLabel control={<Switch size="small" color="default" />} onClick={switchToAccountPro} label={<Box component="div" fontSize={12} fontFamily="Arial" color="orange"> pro </Box>}/>
+      </FormContainer>      
       <Marginer direction="vertical" margin={10} />
       <SubmitButton type="submit">s'inscrire</SubmitButton>
       <Marginer direction="vertical" margin="10em" />

@@ -50,11 +50,11 @@ export function Accountpro() {
     <BoxContainer>
     
       <FormContainer>
-        <div className="grid_container">
-      <div className="grid_item"><Input type="text" placeholder="Nom Complet" />
+        <div className=" ">
+         <div className="grid_item"><Input type="text" placeholder="Nom Complet" />
           <Input  type="email" placeholder="Email/Numéro de téléphone" />
           <Input  type="password" placeholder="Mot de passe" /> 
-      </div> 
+         </div> 
          <div className="grid_item"><Input type="text" placeholder="Nom Complet" />
           <Input  type="email" placeholder="Email/Numéro de téléphone" />
           <Input  type="password" placeholder="Mot de passe" /> 
@@ -64,7 +64,7 @@ export function Accountpro() {
           <Input  type="password" placeholder="Mot de passe" /> 
       </div> 
          </div>
-         <FormControlLabel control={<Switch checked={state.checkedA} size="small" color="default"/>} onClick={switchToSignup2} label={<Box component="div" fontSize={12} fontFamily="Arial" color="orange"> pro </Box>}/>
+         <FormControlLabel control={<Switch checked={state.checkedA} size="small" color="transparent"/>} onClick={switchToSignup2} label={<Box component="div" fontSize={12} fontFamily="Arial" color="orange"> pro </Box>}/>
       <Marginer direction="vertical" margin={0} />
       <SubmitButton type="submit">s'inscrire</SubmitButton>
       <Marginer direction="vertical" margin="1em" />

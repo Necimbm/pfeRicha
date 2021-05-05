@@ -22,11 +22,12 @@ export const ProductCard = styled.div`
 `;
 
 export const ProductImg = styled.img`
-  height: 300px;
+  height: 350px;
   width: 250px;
-  box-shadow: 8px 8px #fdc500;
+  box-shadow: 7px 7px #fdc500;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 50% 50% 0 0;
 `;
 
 export const ProductsHeading = styled.h1`

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
+
 export const BoxContainer = styled.div`
   weight: 50%;
-  height:50%;
+  height:45%;
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -11,7 +12,7 @@ export const BoxContainer = styled.div`
 
 export const FormContainer = styled.form`
   width: 50px;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,13 +39,13 @@ export const BoldLink2 = styled.a`
   color:red;
   font-weight: 600;
   text-decoration: none;
-  margin: 20px 4px 0 4px;
+  margin: 0px 4px 0 4px;
 `;
 
 
 export const Input = styled.input`
   width: 230px;
-  height: 35px;
+  height: 50px;
   outline: none;
   border: 1px solid rgba(200, 200, 200, 0.75);
   padding: 0px 5px;

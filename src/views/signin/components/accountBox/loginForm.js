@@ -11,8 +11,15 @@ import {
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
+import styled from "styled-components";
+import { FaHome } from "react-icons/fa";
 
 
+export const home = styled(FaHome) `
+font-size: 1rem;
+color: black;
+
+`;
 
 
 export function LoginForm(props) {
@@ -21,8 +28,8 @@ export function LoginForm(props) {
   return (
     <BoxContainer>
       <FormContainer> 
-        <Input type="email" placeholder="Email / Numéro de téléphone" />
-        <Input type="password" placeholder="Mot de passe" />
+        <Input id="email" type="email" placeholder="Email / Numéro de téléphone" />
+        <Input id="password" type="password" placeholder="Mot de passe" />
       </FormContainer>
       <Marginer direction="vertical" margin={20} />
       <MutedLink href="#">Mot de passe oublié ?</MutedLink>
@@ -34,11 +41,14 @@ export function LoginForm(props) {
         <BoldLink href="#" onClick={switchToSignup}>
           Inscrivez-vous
         </BoldLink>
+        
        
       </MutedLink>
-      <BoldLink2 href="/" >
-          Acceuil
+      <BoldLink2 href="/"  >
+          Acceuil 
+          <home/>
         </BoldLink2>
+        
     </BoxContainer>
   );
 }
