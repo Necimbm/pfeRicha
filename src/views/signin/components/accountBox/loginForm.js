@@ -6,20 +6,15 @@ import {
   FormContainer,
   Input,
   MutedLink,
-  BoldLink2,
+  Home1,
   
 } from "./common";
-import { Marginer } from "../marginer";
+
 import { AccountContext } from "./accountContext";
-import styled from "styled-components";
-import { FaHome } from "react-icons/fa";
+import { Home } from "../../../LandingPage/components/Navbar/NavbarElements";
 
 
-export const home = styled(FaHome) `
-font-size: 1rem;
-color: black;
 
-`;
 
 
 export function LoginForm(props) {
@@ -30,24 +25,20 @@ export function LoginForm(props) {
       <FormContainer> 
         <Input id="email" type="email" placeholder="Email / Numéro de téléphone" />
         <Input id="password" type="password" placeholder="Mot de passe" />
+        <MutedLink href="#">Mot de passe oublié ?</MutedLink>
       </FormContainer>
-      <Marginer direction="vertical" margin={20} />
-      <MutedLink href="#">Mot de passe oublié ?</MutedLink>
-      <Marginer direction="vertical" margin="1.6em" />
+     
       <SubmitButton type="submit">Se connecter</SubmitButton>
-      <Marginer direction="vertical" margin="1em" />
       <MutedLink href="#">
         Vous n'avez pas de compte ?{" "}
         <BoldLink href="#" onClick={switchToSignup}>
           Inscrivez-vous
         </BoldLink>
-        
-       
       </MutedLink>
-      <BoldLink2 href="/"  >
+      <Home1 href="/"  >
           Acceuil 
-          <home/>
-        </BoldLink2>
+          <Home/>
+        </Home1> 
         
     </BoxContainer>
   );

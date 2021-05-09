@@ -6,11 +6,46 @@ import {
   HeroContainer2,
   HeroContent,
   HeroItems,
-  HeroH1,
-  HeroP,
-  HeroBtn
+  H1
+ 
+ 
 } from './HeroElements';
-import {NavLink,Bars2} from '../Navbar/NavbarElements'
+import {Bars2} from '../Navbar/NavbarElements'
+ import "./styles.css";
+import styled  from 'styled-components';
+
+export const Richa = styled.div`
+ 
+ margin-left:40rem;
+  background-color:black;
+  opacity:40%;
+  width:600px;
+  height:300px;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  font-family: 'Work Sans', sans-serif;
+  border-radius:50px;
+  
+`;
+export const Richa2 = styled.div`
+ position: absolute;
+ margin-left:40rem;
+  opacity:100%;
+  width:400px;
+  height:300px;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  font-family: 'Work Sans', sans-serif;
+  font-size:35px;
+  text-align:center;
+  
+  
+  
+`;
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,13 +56,24 @@ const Hero = () => {
 
   return (
     
-    <HeroContainer2> <Navbar toggle={toggle} /><Sidebar isOpen={isOpen} toggle={toggle} /><HeroContainer>
+    <HeroContainer2> <Navbar toggle={toggle}> </Navbar><Sidebar isOpen={isOpen} toggle={toggle} /><H1 href='/'>ريشة <Bars2/></H1>
+    <HeroContainer>
     
     <HeroContent>
-    <NavLink href='/'>ريشة<Bars2/></NavLink>
-      <HeroItems>
-        <HeroH1>صنعة الأجداد</HeroH1>
-        <HeroP> من إيدين الأحفاد</HeroP>
+      <HeroItems class="fade-in-text">
+        <div  class="animated-title ">
+  <div class="text-top">
+    <div >
+      <span>صنعة الأجداد</span>
+     
+    </div>
+  </div>
+  <div class="text-bottom">
+    <div>من إيدين الأحفاد</div>
+  </div>
+</div>
+<Richa/>
+<Richa2> Richa vous offre des produits artisanaux où  la créativité et la haute qualité sont garantis. </Richa2>
       </HeroItems>
     </HeroContent>
   </HeroContainer></HeroContainer2>
@@ -36,3 +82,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+

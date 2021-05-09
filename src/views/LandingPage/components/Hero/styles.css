@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0);  }
+  40%, 60% { transform: translate3d(0, 0%, 0); }
+  100% { transform: translate3d(0, 1, 0);  }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  40%, 60% { transform: translate3d(0, 0, 0);}
+  100% { transform: translate3d(0, 1, 0); }
+  
+}
+.animated-title {
+  color: #fff;
+  font-family:"Myriad Arabic";;
+  height: 90vmin;
+  left:21%;
+  position: absolute;
+  top:80%;
+  transform: translate(-50%, -50%);
+  width: 90vmin;
+  
+  
+}
+
+.animated-title > div {
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+
+}
+.animated-title > div div {
+  font-size: 12vmin;
+  padding: 2vmin 0;
+  position: absolute;
+  
+}
+.animated-title > div div span {
+  display: block;
+ 
+  
+}
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid #e9ba23;
+  display: inline-block;
+  animation: fadeIn linear 0.5s;
+  
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0s;
+  animation-duration:5s;
+  bottom: 0;
+  transform: translate(0, 100%); left: 12rem;
+  animation-iteration-count:infinite;
+}
+.animated-title > div.text-top div span:first-child {
+  color: #fff;
+  
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 5s;
+  
+  top: 0;
+  transform: translate(0, -100%);
+  animation-iteration-count:infinite;
+}
+  
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

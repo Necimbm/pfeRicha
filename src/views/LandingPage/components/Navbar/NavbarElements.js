@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
-import { FaFeather, FaFeatherAlt, FaSearch } from 'react-icons/fa';
+import { FaHome,FaFeather, FaFeatherAlt, FaSearch } from 'react-icons/fa';
 
 export const Nav = styled.nav`
   background: transparent;
@@ -21,8 +21,6 @@ export const NavLink = styled.a`
   text-decoration: none;
   cursor: pointer;
   font-family: "Urdu Typesetting";
-  margin-left:30rem;
-  
 
   @media screen and (max-width: 400px) {
     position: absolute;
@@ -67,10 +65,7 @@ export const Bars = styled(FaFeatherAlt)`
 `;
 export const Bars2 = styled(FaFeatherAlt)`
   font-size: 4rem;
-  transform: translate(-50%, -15%);
-  margin-top:3rem;
-  margin-left:3rem;
-  
+
 `;
 export const Search = styled(FaSearch)`
   font-size: 1.5rem;
@@ -78,4 +73,9 @@ export const Search = styled(FaSearch)`
   margin-top:1rem;
   margin-left:3rem;
   
+`;
+export const Home = styled(FaHome) `
+font-size: 1rem;
+margin-left:15px;
+
 `;

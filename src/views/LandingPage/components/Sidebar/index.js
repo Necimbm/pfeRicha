@@ -1,5 +1,5 @@
-import React from 'react';
-import Feature from '../Feature/index'
+import React, { useContext } from "react";
+
 import {
   SidebarContainer,
   Icon,
@@ -9,8 +9,10 @@ import {
   SidebarRoute,
   SideBtnWrap
 } from './SidebarElements';
+import { AccountContext } from "./accountContext";
 
 const Sidebar = ({ isOpen, toggle }) => {
+  const  switchToSignup  = useContext(AccountContext);
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
       <Icon onClick={toggle}>
@@ -18,11 +20,11 @@ const Sidebar = ({ isOpen, toggle }) => {
       </Icon>
       <SidebarMenu>
         <SidebarLink href='/signin'> se connecter</SidebarLink>
-        <SidebarLink href='/contact'>contacter-nous</SidebarLink>
-        <SidebarLink >A propo</SidebarLink>
+        <SidebarLink >contacter-nous</SidebarLink>
+        <SidebarLink >A propos</SidebarLink>
       </SidebarMenu>
       <SideBtnWrap>
-      <SidebarRoute>order</SidebarRoute>
+      <SidebarRoute href="/signup" >Créer un compte</SidebarRoute>
       </SideBtnWrap>
     </SidebarContainer>
   );

@@ -11,6 +11,7 @@ import {
   ProductPrice,
   ProductButton
 } from './ProductsElements';
+import "./styles.css";
 
 const Products = ({ heading, data }) => {
   return (
@@ -19,9 +20,9 @@ const Products = ({ heading, data }) => {
       <ProductWrapper>
         {data.map((product, index) => {
           return (
-            <ProductCard key={index}>
-              <ProductImg src={product.img} alt={product.alt} />
-              <ProductInfo>
+            <ProductCard key={index} class="flip-card" >
+              <ProductImg src={product.img} alt={product.alt} class="flip-card-front"/>
+              <ProductInfo class="flip-card-back">
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductDesc>{product.desc}</ProductDesc>
                 <ProductPrice>{product.price}</ProductPrice>

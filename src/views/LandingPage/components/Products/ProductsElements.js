@@ -4,7 +4,7 @@ export const ProductsContainer = styled.div`
   /* width: 100vw; */
   min-height: 100vh;
   padding: 5rem calc((100vw - 1300px) / 2);
-  background: #2d132c;
+  background: #857671 ;
   color: #fff;
 `;
 
@@ -27,7 +27,7 @@ export const ProductImg = styled.img`
   box-shadow: 7px 7px #fdc500;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50% 50% 0 0;
+ 
 `;
 
 export const ProductsHeading = styled.h1`

@@ -1,41 +1,22 @@
 import React, { useContext } from "react";
 import { Switch, Box, Grid } from "@material-ui/core";
 import { FormControlLabel } from '@material-ui/core';
-import "./accountprostyle.css";
+
 import {
   BoldLink,
-  BoxContainer,
-  FormContainer,
+  BoxContainer3,
+  FormContainer3,
   MutedLink,
-  SubmitButton,
-  Input,
-  Input2
+  SubmitButton3,
+  Input2,
+  MutedLink2,
+  Home2,
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
 import "./";
-import { makeStyles } from '@material-ui/core/styles';
-import {List} from '@material-ui/core';
+import { Home } from "../../../LandingPage/components/Navbar/NavbarElements";
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: '100%',
-    maxWidth: 259,
-    backgroundColor: theme.palette.background.paper,
-    position: 'relative',
-    overflow: 'auto',
-    maxHeight: 200,
-  
-  },
-  listSection: {
-    backgroundColor: 'inherit',
-  },
-  ul: {
-    backgroundColor: 'inherit',
-    padding: 0,
-  },
-}));
 
 export function Accountpro() {
   const { switchToSignup2 } = useContext(AccountContext);
@@ -44,32 +25,45 @@ export function Accountpro() {
     checkedA: true,
     checkedB: true,
   });
- 
+  const { switchToSignin } = useContext(AccountContext);
   return (
     
-    <BoxContainer>
+    <BoxContainer3>
     
-      <FormContainer>
-        <div className=" ">
-         <div className="grid_item"><Input type="text" placeholder="Nom Complet" />
-          <Input  type="email" placeholder="Email/Numéro de téléphone" />
-          <Input  type="password" placeholder="Mot de passe" /> 
+      <FormContainer3>
+        <div className="grid_container">
+         <div className="grid_item">
+           <Input2 type="text" placeholder="Nom Complet" />
+          <Input2  type="email" placeholder="Email/Numéro de téléphone" />
+          <Input2  type="password" placeholder="Mot de passe" /> 
          </div> 
-         <div className="grid_item"><Input type="text" placeholder="Nom Complet" />
-          <Input  type="email" placeholder="Email/Numéro de téléphone" />
-          <Input  type="password" placeholder="Mot de passe" /> 
+         <div className="grid_item">
+           <Input2 type="text" placeholder="Nom Complet" />
+          <Input2  type="email" placeholder="Email/Numéro de téléphone" />
+          <Input2  type="password" placeholder="Mot de passe" /> 
           </div> 
-          <div className="grid_item"><Input type="text" placeholder="Nom Complet" />
-          <Input  type="email" placeholder="Email/Numéro de téléphone" />
-          <Input  type="password" placeholder="Mot de passe" /> 
+          <div className="grid_item">
+          <Input2 type="text" placeholder="Nom Complet" />
+          <Input2  type="email" placeholder="Email/Numéro de téléphone" />
+          <Input2  type="password" placeholder="Mot de passe" /> 
       </div> 
          </div>
          <FormControlLabel control={<Switch checked={state.checkedA} size="small" color="transparent"/>} onClick={switchToSignup2} label={<Box component="div" fontSize={12} fontFamily="Arial" color="orange"> pro </Box>}/>
-      <Marginer direction="vertical" margin={0} />
-      <SubmitButton type="submit">s'inscrire</SubmitButton>
-      <Marginer direction="vertical" margin="1em" />
-      </FormContainer>
+
+      <SubmitButton3 type="submit">s'inscrire</SubmitButton3>
+      <MutedLink href="#">
+        Vous avez déja un compte ?
+        <BoldLink href="#" onClick={switchToSignin}>
+          Se connecter
+        </BoldLink>
+        
+      </MutedLink>
+      <Home2 href="/"  >
+          Acceuil 
+          <Home/>
+        </Home2> 
+      </FormContainer3>
       
-    </BoxContainer>
+    </BoxContainer3>
   );
 }
