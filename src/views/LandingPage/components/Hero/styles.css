@@ -11,16 +11,15 @@
   
 }
 .animated-title {
+  margin-top: 5rem;
   color: #fff;
-  font-family:"Myriad Arabic";;
-  height: 90vmin;
-  left:21%;
+  height: 95vmin;
   position: absolute;
-  top:80%;
-  transform: translate(-50%, -50%);
-  width: 90vmin;
-  
-  
+  width: 110vmin;
+  padding-left: 0.5rem;
+  bottom:0;
+  left:0;
+ 
 }
 
 .animated-title > div {
@@ -31,10 +30,10 @@
 
 }
 .animated-title > div div {
-  font-size: 12vmin;
+  font-size: 10vmin  ;
   padding: 2vmin 0;
   position: absolute;
-  
+ 
 }
 .animated-title > div div span {
   display: block;
@@ -42,7 +41,7 @@
   
 }
 .animated-title > div.text-top {
-  border-bottom: 1vmin solid #e9ba23;
+  border-bottom: 0.5vmin solid #e9ba23;
   display: inline-block;
   animation: fadeIn linear 0.5s;
   
@@ -52,11 +51,13 @@
   animation-delay: 0s;
   animation-duration:5s;
   bottom: 0;
-  transform: translate(0, 100%); left: 12rem;
+  transform: translate(0, 100%);
+  left: 17rem;
   animation-iteration-count:infinite;
 }
 .animated-title > div.text-top div span:first-child {
-  color: #fff;
+ 
+ font-family: 'Tajawal', sans-serif;
   
 }
 .animated-title > div.text-bottom {
@@ -64,7 +65,7 @@
 }
 .animated-title > div.text-bottom div {
   animation: showBottomText 5s;
-  
+  font-family: 'Tajawal', sans-serif;
   top: 0;
   transform: translate(0, -100%);
   animation-iteration-count:infinite;

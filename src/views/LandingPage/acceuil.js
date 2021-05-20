@@ -4,7 +4,7 @@ import { GlobalStyle } from './globalStyles';
 import Hero from './components/Hero';
 import Products from './components/Products';
 import { productData, productDataTwo } from './components/Products/data';
-import Feature from './components/Feature';
+import FeatureSection from './components/Feature';
 import Footer from './components/Footer';
 import styled from "styled-components";
 
@@ -21,7 +21,7 @@ function acceuil() {
      <GlobalStyle/>
       <Hero />
       <Products heading='Votre meilleur choix' data={productData} />
-      <Feature />
+      <FeatureSection />
       <Products heading='Personnaliser votre commande' data={productDataTwo} />
       <Footer />
   

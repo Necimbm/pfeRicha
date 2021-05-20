@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const ProductsContainer = styled.div`
-  /* width: 100vw; */
+   width: 100vw; 
   min-height: 100vh;
   padding: 5rem calc((100vw - 1300px) / 2);
-  background: #857671 ;
-  color: #fff;
+  background: #fff ;
+  color: #000;
 `;
 
 export const ProductWrapper = styled.div`
@@ -24,10 +24,6 @@ export const ProductCard = styled.div`
 export const ProductImg = styled.img`
   height: 350px;
   width: 250px;
-  box-shadow: 7px 7px #fdc500;
-  background-repeat: no-repeat;
-  background-size: cover;
- 
 `;
 
 export const ProductsHeading = styled.h1`
