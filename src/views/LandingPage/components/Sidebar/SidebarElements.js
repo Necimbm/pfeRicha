@@ -5,16 +5,15 @@ import { FaTimes } from 'react-icons/fa';
 export const SidebarContainer = styled.aside`
   position: fixed;
   z-index: 999;
-  width: 300px;
+  width: 350px;
   height: 100%;
   background: #faf3e0;
   display: grid;
   align-items: center;
-  margin-right: 1rem;
+  top: 0;
   transition: 0.3s ease-in-out;
-  
   right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
-border-radius: 50px 50px 50px 50px;
+
   @media screen and (max-width: 400px) {
     width: 100%;
   }
@@ -46,7 +45,7 @@ export const SidebarMenu = styled.div`
   }
 `;
 
-export const SidebarLink = styled.a`
+export const SidebarLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,7 +57,7 @@ export const SidebarLink = styled.a`
   cursor: pointer;
 
   &:hover {
-    color: #ffcb91;
+    color: #e31837;
     transition: 0.2s ease-in-out;
   }
 `;
@@ -68,22 +67,21 @@ export const SideBtnWrap = styled.div`
   justify-content: center;
 `;
 
-export const SidebarRoute = styled.a`
-  background: #ffa45c;
+export const SidebarRoute = styled(Link)`
+  background: #e31837;
   white-space: nowrap;
-  padding: 16px 44px;
-  color: #faf3e0;
+  padding: 16px 64px;
+  color: #fff;
   font-size: 16px;
   outline: none;
   border: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   text-decoration: none;
-  border-radius:50px;
 
   &:hover {
     transition: 0.2s ease-in-out;
-    background: #b68973;
+    background: green;
     color: #fff;
   }
 `;

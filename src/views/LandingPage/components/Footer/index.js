@@ -22,7 +22,7 @@ const Footer = () => {
       <FooterWrap>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/'>Richa</SocialLogo>
+            <SocialLogo to='/'>Pizza</SocialLogo>
             <SocialIcons>
               <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
                 <FaFacebook />
@@ -34,7 +34,7 @@ const Footer = () => {
                 <FaYoutube />
               </SocialIconLink>
               <SocialIconLink
-                href=''
+                href='//www.twitter.com/briandesignz'
                 target='_blank'
                 aria-label='Twitter'
                 rel='noopener noreferrer'

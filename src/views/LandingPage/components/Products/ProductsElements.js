@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const ProductsContainer = styled.div`
-   width: 100vw; 
+  /* width: 100vw; */
   min-height: 100vh;
   padding: 5rem calc((100vw - 1300px) / 2);
-  background: #fff ;
-  color: #000;
+  background: #150f0f;
+  color: #fff;
 `;
 
 export const ProductWrapper = styled.div`
@@ -16,19 +16,21 @@ export const ProductWrapper = styled.div`
 `;
 
 export const ProductCard = styled.div`
-  margin: 0 1rem;
+  margin: 0 2rem;
   line-height: 2;
   width: 300px;
 `;
 
 export const ProductImg = styled.img`
-  height: 350px;
-  width: 250px;
+  height: 300px;
+  min-width: 300px;
+  max-width: 100%;
+  box-shadow: 8px 8px #fdc500;
 `;
 
 export const ProductsHeading = styled.h1`
   font-size: clamp(2rem, 2.5vw, 3rem);
-  text-align:center ;
+  text-align: center;
   margin-bottom: 5rem;
 `;
 
@@ -55,14 +57,13 @@ export const ProductPrice = styled.p`
   font-size: 2rem;
 `;
 
-export const ProductButton = styled.a`
+export const ProductButton = styled.button`
   font-size: 1rem;
-  padding: 1rem 3rem;
+  padding: 1rem 4rem;
   border: none;
   background: #e31837;
   color: #fff;
   transition: 0.2 ease-out;
-  border-radius:15px;
 
   &:hover {
     background: #ffc500;
