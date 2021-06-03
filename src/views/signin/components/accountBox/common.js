@@ -90,31 +90,34 @@ export const BoldLink2 = styled.a`
 `;
 export const Home1 = styled.a`
   font-size: 11px;
-  color: #feddbe;
+  color: #edadae;
   font-weight: bold;
-  font-family: "montserrat";
+ 
   text-decoration: none;
   display :flex;
   jsutify-contnent: center;
   align-items: center;
   &:hover {
-    filter: brightness(0.5);
+    color: #feddbe;
+    
   }
-  margin-top:1rem;
+  margin-top:0.5rem;
 `;
 
 export const Home2 = styled.a`
-  font-size: 11px;
-  color: #feddbe;
-  font-weight: Bold;
-  font-family: "montserrat";
+font-size: 11px;
+  color: #edadae;
+  font-weight: bold;
+ 
   text-decoration: none;
   display :flex;
   jsutify-contnent: center;
   align-items: center;
   &:hover {
-    filter: brightness(0.5);
+    color: #feddbe;
+    
   }
+  margin-top:0.5rem;
 `;
 export const Input = styled.input`
   width: 230px;

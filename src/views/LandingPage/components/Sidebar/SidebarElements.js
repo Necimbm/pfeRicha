@@ -6,10 +6,12 @@ export const SidebarContainer = styled.aside`
   z-index:3;
   width: 300px;
   height: 100%;
-  background: rgba(255, 223, 187,0.85);
-  display: grid;
+  background-color:#373a40 ;
+  opacity:90%;
+  display: column;
   align-items: center;
-  margin-right: 0rem;
+  justify-content: center;
+  padding-top:5rem;
   transition: 0.3s ease-in-out;
   
   right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
@@ -67,17 +69,20 @@ export const SidebarLink = styled.a`
 export const SideBtnWrap = styled.div`
   display: flex;
   justify-content: center;
+  margin-top:2rem;
   
 `;
 
 export const SidebarRoute = styled.a`
-  background: #393e46;
+  background: #fff;
   white-space: nowrap;
   padding: 16px 44px;
-  color: #fff;
+  color: #373a40;
   font-size: 16px;
   outline: none;
   border: none;
+  font-weight:bold;
+  font-family: "montserrat";
   cursor: pointer;
   transition: 0.2s ease-in-out;
   text-decoration: none;

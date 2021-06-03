@@ -1,15 +1,12 @@
 import React from 'react';
-import { Nav, NavLink, NavIcon, Bars,Bars2 } from './NavbarElements';
+import { Nav, NavLink,Bars2, NavLink2 } from './NavbarElements';
 
-const Navbar = ({ toggle }) => {
+const Navbar = () => {
   return (
     <>
       <Nav>
         <NavLink to='/'>ريشة <Bars2/></NavLink>
-        <NavIcon onClick={toggle}>
-          <p>Menu</p>
-          <Bars />
-        </NavIcon>
+        <NavLink2 href="/Profile" >Mon Profile</NavLink2>
       </Nav>
     </>
   );

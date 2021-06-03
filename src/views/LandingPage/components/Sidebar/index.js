@@ -16,14 +16,17 @@ const Sidebar = ({ isOpen, toggle }) => {
       <Icon onClick={toggle}>
         <CloseIcon />
       </Icon>
-      <SidebarMenu>
-        <SidebarLink href='/signin'> se connecter</SidebarLink>
-        <SidebarLink >contacter-nous</SidebarLink>
-        <SidebarLink >A propos</SidebarLink>
-      </SidebarMenu>
+     
       <SideBtnWrap>
       <SidebarRoute href="/signup" >Créer un compte</SidebarRoute>
       </SideBtnWrap>
+      <SideBtnWrap>
+      <SidebarRoute href="/contact" >contacter-nous</SidebarRoute>
+      </SideBtnWrap>
+      <SideBtnWrap>
+      <SidebarRoute href="#" >A propos</SidebarRoute>
+      </SideBtnWrap>
+      
     </SidebarContainer>
   );
 };

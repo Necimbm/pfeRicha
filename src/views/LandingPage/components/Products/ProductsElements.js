@@ -31,7 +31,6 @@ export const ProductCard = styled.div`
 export const ProductImg = styled.img`
   height: 350px;
   width: 250px;
- 
   padding: 5px;
 `;
 
