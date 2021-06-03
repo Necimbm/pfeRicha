@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.footer`
-  background-color: #0d0909;
+  background-color: #373a40;
 `;
 
 export const FooterWrap = styled.div`
-  padding: 16px 24px;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +33,7 @@ export const SocialMediaWrap = styled.div`
 `;
 
 export const SocialLogo = styled(Link)`
-  color: #fff;
+color:#feddbe;
   justify-self: start;
   cursor: pointer;
   text-decoration: none;

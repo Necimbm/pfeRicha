@@ -1,66 +1,60 @@
 import product1 from '../../images/product-1.jpg';
-import product2 from '../../images/product-2.jpg';
+import product2 from '../../images/product2.jpg';
 import product3 from '../../images/product-3.jpg';
-import sweet1 from '../../images/sweet3.jpg';
-import sweet2 from '../../images/sweet-2.jpg';
-import sweet3 from '../../images/sweet-3.jpg';
+import Zarbia from '../../images/personnaliser1.jpg';
+import braclet from '../../images/braclet.jpg';
+
+
 
 export const productData = [
-  {
+  {id:1,
     img: product1,
-    alt: 'Pizza',
-    name: 'Supreme Pizza',
+    alt: 'Zarbia',
+    name: 'Margoum',
     desc:
-      'Marinara sauce, basil, italian sausage, roma tomatoes, olives, and pesto',
-    price: '$19.99',
-    button: 'Add to Cart'
+      'Zarbia margoum, taille 5m x 10m ',
+    price: '5000 DT',
+    button: 'Ajouter au panier'
   },
-  {
+ 
+  { id:2,
     img: product2,
-    alt: 'Pizza',
-    name: 'Hawaiian Paradise',
+    alt: 'Jebba',
+    name: 'Jebba homme',
     desc:
-      ' Marinara sauce, basil, italian sausage, roma tomatoes, olives, and pesto',
-    price: '$16.99',
-    button: 'Add to Cart'
+      'Jebba kamraya, couleur blanc, sur meusure',
+    price: '250 DT',
+    button: 'Ajouter au panier'
   },
-  {
+  { id:3,
     img: product3,
-    alt: 'Pizza',
-    name: 'Veggie Overload',
+    alt: 'Farda',
+    name: 'Farda',
     desc:
-      ' Marinara sauce, basil, italian sausage, roma tomatoes, olives, and pesto',
-    price: '$14.99',
-    button: 'Add to Cart'
+      'Farda en Or, 24k, sur meusure',
+    price: '2000 DT',
+    button: 'Ajouter au panier'
   }
 ];
 
 export const productDataTwo = [
-  {
-    img: sweet2,
-    alt: 'Donuts',
-    name: 'Doughlicious',
+  {id:1,
+    img: Zarbia,
+    alt: 'Margoum',
+    name: 'Margoum Assil ',
     desc:
-      'Belgian chocolate glazed donuts covered in icing with sprinkles on top',
-    price: '$9.99',
-    button: 'Add to Cart'
+      'Zarbia margoum personnalisé',
+    price: 'à partir de 1000dt',
+    button: 'Personnaliser '
   },
-  {
-    img: sweet3,
-    alt: 'Ice Cream',
-    name: 'Caramel Wonder',
+  {id:2,
+    img: braclet,
+    alt: 'Braclet',
+    name: 'Braclet ',
     desc:
-      'Vanilla ice cream covered with caramel and chocolate glaze topped with a coco stick',
-    price: '$12.99',
-    button: 'Add to Cart'
+      'Braclet en or jaune personnalisée',
+    price: 'à partir de 2000dt',
+    button: 'Personnaliser'
   },
-  {
-    img: sweet1,
-    alt: 'Brownie',
-    name: 'Brownie Bunch',
-    desc:
-      'Double fudge brownie squares topped with white chocolate pieces and macadamia nuts',
-    price: '$9.99',
-    button: 'Add to Cart'
-  }
+ 
 ];

@@ -1,5 +1,5 @@
-import React from 'react';
-import Feature from '../Feature/index'
+import React from "react";
+
 import {
   SidebarContainer,
   Icon,
@@ -17,12 +17,12 @@ const Sidebar = ({ isOpen, toggle }) => {
         <CloseIcon />
       </Icon>
       <SidebarMenu>
-        <SidebarLink to='/signin'> se connecter</SidebarLink>
-        <SidebarLink>contacter-nous</SidebarLink>
-        <SidebarLink to='/'>A propo</SidebarLink>
+        <SidebarLink href='/signin'> se connecter</SidebarLink>
+        <SidebarLink >contacter-nous</SidebarLink>
+        <SidebarLink >A propos</SidebarLink>
       </SidebarMenu>
       <SideBtnWrap>
-      <SidebarRoute>order</SidebarRoute>
+      <SidebarRoute href="/signup" >Créer un compte</SidebarRoute>
       </SideBtnWrap>
     </SidebarContainer>
   );

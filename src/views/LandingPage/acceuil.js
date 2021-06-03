@@ -1,22 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { GlobalStyle } from './globalStyles';
 import Hero from './components/Hero';
 import Products from './components/Products';
 import { productData, productDataTwo } from './components/Products/data';
-import Feature from './components/Feature';
+import FeatureSection from './components/Feature';
 import Footer from './components/Footer';
-
+import styled from "styled-components";
+import Apropos from"./components/Apropos";
+const AppContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: column;
+`;
 function acceuil() {
   return (
-    <Router>
-      <GlobalStyle />
+    <AppContainer>
+     <GlobalStyle/>
+    
       <Hero />
-      <Products heading='Choose your favorite' data={productData} />
-      <Feature />
-      <Products heading='Sweet Treats for You' data={productDataTwo} />
+      <Products heading='Votre meilleur choix' data={productData} />
+      <FeatureSection />
+      <Products heading='Personnaliser votre commande' data={productDataTwo} />
+      <Apropos />
       <Footer />
-    </Router>
+     
+
+    </AppContainer>
+      
   );
 }
 

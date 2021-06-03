@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
 export const SidebarContainer = styled.aside`
   position: fixed;
-  z-index: 999;
-  width: 350px;
+  z-index:3;
+  width: 300px;
   height: 100%;
-  background: #faf3e0;
+  background: rgba(255, 223, 187,0.85);
   display: grid;
   align-items: center;
-  top: 0;
+  margin-right: 0rem;
   transition: 0.3s ease-in-out;
+  
   right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
 
   @media screen and (max-width: 400px) {
@@ -21,6 +21,7 @@ export const SidebarContainer = styled.aside`
 
 export const CloseIcon = styled(FaTimes)`
   color: #000;
+  font-size:30px;
 `;
 
 export const Icon = styled.div`
@@ -38,14 +39,15 @@ export const SidebarMenu = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 80px);
-  text-align: center;
+  
 
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(3, 60px);
+    
   }
 `;
 
-export const SidebarLink = styled(Link)`
+export const SidebarLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +59,7 @@ export const SidebarLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    color: #e31837;
+    color:#fff;
     transition: 0.2s ease-in-out;
   }
 `;
@@ -65,12 +67,13 @@ export const SidebarLink = styled(Link)`
 export const SideBtnWrap = styled.div`
   display: flex;
   justify-content: center;
+  
 `;
 
-export const SidebarRoute = styled(Link)`
-  background: #e31837;
+export const SidebarRoute = styled.a`
+  background: #393e46;
   white-space: nowrap;
-  padding: 16px 64px;
+  padding: 16px 44px;
   color: #fff;
   font-size: 16px;
   outline: none;
@@ -78,10 +81,11 @@ export const SidebarRoute = styled(Link)`
   cursor: pointer;
   transition: 0.2s ease-in-out;
   text-decoration: none;
+  border-radius:50px;
 
   &:hover {
     transition: 0.2s ease-in-out;
-    background: green;
-    color: #fff;
+    background: #fff;
+    color: #000;
   }
 `;
