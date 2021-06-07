@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0);  }
+  40%, 60% { transform: translate3d(0, 0%, 0); }
+  100% { transform: translate3d(0, 1, 0);  }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  40%, 60% { transform: translate3d(0, 0, 0);}
+  100% { transform: translate3d(0, 1, 0); }
+  
+}
+.animated-title {
+  min-height: 100vh;
+  color: #fff;
+  position: absolute;
+  width: 100vmin;
+  top:12rem;
+  bottom:0;
+  left:0;
+  @media screen and (max-width: 500px) {
+  
+  }
+ 
+}
+
+.animated-title > div {
+  
+  overflow: hidden;
+  position: absolute;
+  width: 95%;
+  height: 50%;
+  left:1vmin;
+
+}
+.animated-title > div div {
+  font-size: 10vmin  ;
+  padding: 2vmin 0;
+  position: absolute;
+  
+}
+.animated-title > div div span {
+  display: block;
+ 
+  
+}
+.animated-title > div.text-top {
+  border-bottom: 0.5vmin solid #e9ba23;
+  animation: fadeIn linear 0.5s;
+  
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0s;
+  animation-duration:5s;
+  bottom: 0;
+  transform: translate(0, 100%);
+  margin-left: 12.5rem;
+  animation-iteration-count:infinite;
+}
+.animated-title > div.text-top div span:first-child {
+ 
+ font-family: 'Tajawal', sans-serif;
+  
+}
+.animated-title > div.text-bottom {
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 5s;
+  font-family: 'Tajawal', sans-serif;
+  top: 0;
+  transform: translate(0, -100%);
+  animation-iteration-count:infinite;
+}
+  
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  .wrapper {
+    height:100%;
+    /*This part is important for centering*/
+padding-top:100px;
+padding-left:100px;
+
+  }
+  
+  .typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(22)  , blink .2s  step-end infinite alternate;
+    animation-iteration-count: infinite ;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family:  'Lucida Sans', sans-serif;
+    font-size: 2em;
+    color: #fff;
+    
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
