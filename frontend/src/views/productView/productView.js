@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import './styles.css';
 import LoadingBox from 'views/components/LoadingBox';
@@ -7,17 +7,21 @@ import MessageBox from 'views/components/MessageBox';
 import Rating from 'views/ClientLandingPage/components/Products/rating';
 import { ProductCard, ProductImg } from './productViewElement';
 import { Link } from '@material-ui/core';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { detailsProduct } from 'actions/productActions';
+import data from '../ClientLandingPage/components/Products/data'
 
 
-export default function descrption(props) {
-  const productId = props.match.params.id;
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
-  
+export default function Descrption(props) {
+  const dispatch = useDispatch();
+  const productlId = props.match.params.id;
+  const productlDetails = useSelector((state) => state.productDetails);
+  const { loading, error, product } = productlDetails;
+  const productl = data.products.find(x=> x.id === productlId);
+
   useEffect(() => {
-    dispatch(detailsProduct(productId));
-  }, [dispatch, productId]);
+    dispatch(detailsProduct(productlId));
+  }, [dispatch, productlId]);
 
 
 
@@ -34,20 +38,20 @@ export default function descrption(props) {
      
         <div className="col-2">
         <ProductCard>
-        <ProductImg classeName=" large " src={product.img} alt={product.name} ></ProductImg>
+        <ProductImg classeName=" large " src={productl.img} alt={productl.name} ></ProductImg>
         </ProductCard>
         </div>
         <div className="col-1">
           <ul>
             <li>
-              <h1>{product.name}</h1>
+              <h1>{productl.name}</h1>
               </li>
               <li>
-              <Rating rating={product.rating} numReviews={product.numReviews}></Rating>
+              <Rating rating={productl.rating} numReviews={productl.numReviews}></Rating>
               </li>
-              <li>{product.price}</li>
+              <li>{productl.price}</li>
               <li>Description:
-                <p>{product.desc}</p>
+                <p>{productl.desc}</p>
               </li>
 
           </ul>
@@ -56,12 +60,12 @@ export default function descrption(props) {
         <div className="card card-body col-1">
                     <div className="row">
                       <div>Price</div>
-                      <div className="price">{product.price}</div>
+                      <div className="price">{productl.price}</div>
                     </div>
                     <div className="row ">
                       <div>Status</div>
                         <div>
-                        {product.countInStock > 0 ? (
+                        {productl.countInStock > 0 ? (
                           <span className="success">In Stock</span>
                         ) : (
                           <span className="danger">Unavailable</span>

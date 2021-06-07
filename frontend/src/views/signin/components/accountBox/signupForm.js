@@ -9,11 +9,11 @@ import {
   Input2,
   MutedLink2,
   SubmitButton2,
-  
+  Home
 } from "./common";
 import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
-import { Home } from "../../../LandingPage/components/Navbar/NavbarElements";
+
 
 const initialState ={name:'', email: '', password: '', confirmPassword:''}
 

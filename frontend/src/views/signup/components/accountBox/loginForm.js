@@ -7,11 +7,12 @@ import {
   Input,
   MutedLink,
   Home1,
+  Home
   
 } from "./common";
 
 import { AccountContext } from "./accountContext";
-import { Home } from "../../../LandingPage/components/Navbar/NavbarElements";
+
 
 
 

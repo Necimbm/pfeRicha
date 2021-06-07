@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
 import {Accountpro} from "./accountpro";
-import { Bars2 } from "../../../LandingPage/components/Navbar/NavbarElements";
+import { Bars2 } from "./common";
 import "./styles.css";
 export const BoxContainer = styled.div`
   height: 500px;
@@ -17,10 +17,6 @@ export const BoxContainer = styled.div`
   box-shadow: 0 0 10px rgba(15, 15, 15, 0.58);
   position: relative;
   overflow: hidden; 
- 
-
- 
-  
 `;
 export const BoxContainer2 = styled.div`
   width:795px;
@@ -35,15 +31,6 @@ export const BoxContainer2 = styled.div`
   position: relative;
   overflow: hidden; 
   margin-top:2rem;
-`;
-const TopContainer = styled.div`
-  width: 100%;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-left:1rem;
-  margin-top:1rem;
 `;
 
 const BackDrop = styled(motion.div)`
@@ -63,18 +50,19 @@ z-index: 10;
 
 const HeaderContainer = styled.div`
   width: 100%;
+  height:100px;
   display: flex;
+  padding-top:2rem;
   justify-content: center;
   flex-direction: column;
- 
-
+  z-index: 10;
 `;
 const HeaderContainer2 = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items:center;
-  
+ 
   `;
   
 
@@ -83,11 +71,11 @@ const HeaderText = styled.h2`
   font-size: 30px;
   font-weight: 500;
   line-height: 1;
+  padding:0 2rem;
   color: #fff;
-  z-index: 10;
-  margin: 0;
   font-family: "montserrat";
   font-weight: bold;
+  
   
 `;
 const HeaderText2 = styled.h2`
@@ -118,9 +106,7 @@ const SmallText = styled.h5`
   color: #fff;
   font-weight: 500;
   font-size: 11px;
-  z-index: 10;
-  margin: 0;
-  margin-top: 7px;
+  padding:0 2rem;
 `;
 const SmallText2 = styled.h5`
   color: #fff;
@@ -135,6 +121,7 @@ const SmallText2 = styled.h5`
 
 const InnerContainer = styled.div`
   width: 100%;
+  height:100%;
   display: flex;
   flex-direction: column;
   padding: 0 2 ;
@@ -222,22 +209,20 @@ export function AccountBox(props) {
             transition={expandingTransition}
           />
          {active === "signin" && (
-        <TopContainer>
+      
             <HeaderContainer>
-              <HeaderText>Bienvenue à</HeaderText>
-              <HeaderText>Richa <Bars2 size="25px" /></HeaderText>
+              <HeaderText>Bienvenue à Richa <Bars2 size="25px" /> </HeaderText>
               <SmallText>Merci de se connecter !</SmallText>
-            </HeaderContainer>
-            </TopContainer>
+              </HeaderContainer>
+           
             )}
            {active === "signup" && (
-        <TopContainer>
+      
             <HeaderContainer>
-              <HeaderText>Créer</HeaderText>
-              <HeaderText>votre compte</HeaderText>
+              <HeaderText>Créer votre compte</HeaderText>
               <SmallText>Merci de s'inscrire !</SmallText>
             </HeaderContainer>
-            </TopContainer>
+
             )}
 
             <InnerContainer>
@@ -255,13 +240,13 @@ export function AccountBox(props) {
             animate={isExpanded ? "expanded" : "collapsed"}
             variants={backdropVariants2}
             transition={expandingTransition}/>
-           <TopContainer>
+   
              <HeaderContainer2>
                <HeaderCheckmark> <Bars2 size="50"/></HeaderCheckmark>
               <HeaderText2>Compte Pro </HeaderText2>
               <SmallText2> Merci de s'inscrire !</SmallText2>
             </HeaderContainer2>
-            </TopContainer>
+           
             <InnerContainer2>
        <Accountpro />
         </InnerContainer2>

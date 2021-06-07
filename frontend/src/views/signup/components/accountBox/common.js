@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { FaHome} from 'react-icons/fa';
 
 export const BoxContainer = styled.div`
   weight: 100%;
@@ -212,4 +212,8 @@ height: 60px;
     &:hover {
       background:#766161;
     }`;
-  
+    export const Home = styled(FaHome) `
+    font-size: 1rem;
+    margin-left:15px;
+    
+    `;

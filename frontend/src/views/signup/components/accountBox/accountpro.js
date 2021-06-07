@@ -4,7 +4,6 @@ import { FormControlLabel } from '@material-ui/core';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import {
@@ -15,10 +14,11 @@ import {
   SubmitButton3,
   Input2,
   Home2,
+  Home
 } from "./common";
 import { AccountContext } from "./accountContext";
 import "./accountprostyle.css";
-import { Home } from "../../../LandingPage/components/Navbar/NavbarElements";
+
 
 
 export function Accountpro() {

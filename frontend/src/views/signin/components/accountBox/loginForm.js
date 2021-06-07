@@ -7,10 +7,10 @@ import {
   Input,
   MutedLink,
   Home1,
+  Home
   
 } from "./common";
 import { AccountContext } from "./accountContext";
-import { Home } from "../../../LandingPage/components/Navbar/NavbarElements";
 import { signin } from "actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -67,10 +67,7 @@ const userLogin= (e)=>{
         <Input id="password" type="password" name="password" placeholder="Mot de passe" onChange={handleChange}  />
         <MutedLink href="#">Mot de passe oublié ?</MutedLink>
         <SubmitButton type="submit">Se connecter</SubmitButton>
-      </FormContainer>
-     
-      
-      <MutedLink href="#">
+        <MutedLink href="#">
         Vous n'avez pas de compte ?{" "}
         <BoldLink href="#" onClick={switchToSignup}>
           Inscrivez-vous
@@ -80,6 +77,10 @@ const userLogin= (e)=>{
           Acceuil 
           <Home/>
         </Home1> 
+      </FormContainer>
+     
+      
+     
         
     </BoxContainer>
   );

@@ -15,10 +15,11 @@ import {
   SubmitButton3,
   Input2,
   Home2,
+  Home
 } from "./common";
 import { AccountContext } from "./accountContext";
 import "./accountprostyle.css";
-import { Home } from "../../../LandingPage/components/Navbar/NavbarElements";
+
 
 
 export function Accountpro() {

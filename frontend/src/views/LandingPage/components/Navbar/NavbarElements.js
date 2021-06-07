@@ -76,8 +76,3 @@ export const Bars2 = styled(FaFeather)`
   margin-left:1.5rem;
   
 `;
-export const Home = styled(FaHome) `
-font-size: 1rem;
-margin-left:15px;
-
-`;
