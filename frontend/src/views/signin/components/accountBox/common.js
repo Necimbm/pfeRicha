@@ -16,7 +16,8 @@ export const BoxContainer2 = styled.div`
   display: column;
   justify-content:center;
   align-items: center;
-  margin-top:1rem;
+  margin-top:2rem;
+  
 `;
 export const BoxContainer3 = styled.div`
   weight: 100%;
@@ -24,6 +25,7 @@ export const BoxContainer3 = styled.div`
   display: flex;
   flex-direction:column;
   align-items: center;
+  
 
 `;
 
@@ -50,6 +52,8 @@ export const FormContainer3 = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom:5em;
+  margin-top:1rem;
  
 `;
 
@@ -110,7 +114,7 @@ export const Home2 = styled.a`
 font-size: 11px;
   color: #edadae;
   font-weight: bold;
- 
+ margin-top:1.5rem;
   text-decoration: none;
   display :flex;
   jsutify-contnent: center;
@@ -203,21 +207,23 @@ text-decoration: none;
   }`;
 
   export const SubmitButton3 = styled.button`
-  width: 9rem;
-  height: 30px;
-    color: #fff;
-    font-size: 15px;
-    font-weight: Bold;
-    font-family: "montserrat";
-    border: none;
-    border-radius: 100px 100px 100px 100px;
-    cursor:pointer;
-    transition: all, 240ms ease-in-out;
-    background: #feddbe;
-    
-    &:hover {
-      background:#766161;
-    }`;
+  width: 10em;
+height: 40px;
+text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  font-weight: Bold;
+  font-family: "montserrat";
+  border: none;
+  border-radius: 100px 100px 100px 100px;
+  cursor:pointer;
+  transition: all, 240ms ease-in-out;
+  background:#feddbe;
+
+  &:hover {
+    background:#766161;
+   
+  }`;
     export const Home = styled(FaHome) `
     font-size: 2rem;
     margin-left:15px;

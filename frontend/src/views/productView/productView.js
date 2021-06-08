@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import './styles.css';
 import LoadingBox from 'views/components/LoadingBox';
@@ -14,16 +14,19 @@ import data from '../ClientLandingPage/components/Products/data'
 
 export default function Descrption(props) {
   const dispatch = useDispatch();
-  const productlId = props.match.params.id;
+  const productlId = props.match.params._id;
+  const [qty, setQty] = useState(1)
   const productlDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productlDetails;
-  const productl = data.products.find(x=> x.id === productlId);
+  const productl = data.products.find(x=> x._id === productlId);
 
   useEffect(() => {
     dispatch(detailsProduct(productlId));
   }, [dispatch, productlId]);
 
-
+const addToCarthandler=()=>{
+  props.history.push(`/cart/${productlId}?qty=${qty}`)
+}
 
     return <div >
           {/* {loading ? (
@@ -57,11 +60,16 @@ export default function Descrption(props) {
           </ul>
         </div>
         
-        <div className="card card-body col-1">
+        <div className="col-1">
+          <div className="card card-body ">
+            <ul>
+              <li>
                     <div className="row">
                       <div>Price</div>
                       <div className="price">{productl.price}</div>
                     </div>
+              </li>
+              <li>
                     <div className="row ">
                       <div>Status</div>
                         <div>
@@ -71,15 +79,44 @@ export default function Descrption(props) {
                           <span className="danger">Unavailable</span>
                         )}
                         </div>
-                    
                     </div>
-                    <div className="row ">
-                    <button className="primary block" type="submit">
-                       Ajouter au panier <i class="fas fa-cart-plus"></i>
-                       
-                      </button>
-                      </div>
-                      </div>    
+                    </li>
+                    {productl.countInStock > 0 && (
+                      <>
+                      <li>
+                        <div className="row">
+                          <div>Qty</div>
+                          <div>
+                            <select 
+                            value={qty} 
+                            onChange={ (e) => setQty(e.target.value)}
+                            >
+                              {
+                                [...Array(productl.countInStock).keys()].map(x=>
+                                (
+                                  <option key={x + 1} value={x + 1}>
+                                    {x + 1}
+                                  </option>
+                                ))
+                              }
+                            </select>
+                          </div>
+
+                        </div>
+                      </li>
+                          <li>
+                          <button onClick={addToCarthandler} className="primary block" type="submit">
+                             Ajouter au panier <i class="fas fa-cart-plus"/>
+                            </button>
+                            </li>
+                            </>
+                        )}
+                  
+                      </ul>
+                      </div> 
+                      
+                      </div> 
+                        
         </div>  
       </div>
     

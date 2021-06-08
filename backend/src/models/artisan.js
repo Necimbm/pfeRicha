@@ -42,7 +42,7 @@ const artisanSchema = new mongoose.Schema({
     },
     role:{
         type:String,
-        enum:['admin','client','artisan','fournisseur']
+        enum:[0,1,2,] //0:user,1:fournisseur,2:artisan,3:admin
     },
     contactNumber:{type:String},
     profilePicture:{type:String}

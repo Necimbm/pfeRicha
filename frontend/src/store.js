@@ -4,8 +4,10 @@ import thunk from 'redux-thunk';
 import { userSigninReducer } from 'reducers/userReducers';
 import { productListReducer } from 'reducers/productReducer';
 import { productDetailsReducer } from 'reducers/productReducer';
+import { cartReducer } from 'reducers/cartReducers';
 const initialState = {};
 const reducer = combineReducers({
+cart:cartReducer,    
 userSignin: userSigninReducer,
 productList: productListReducer,
 productDetails: productDetailsReducer

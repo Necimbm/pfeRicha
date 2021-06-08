@@ -15,7 +15,7 @@ import { signin } from "actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 
 
-const initialState ={ email:'test', password:'test' };
+const initialState ={ };
 
 
 
@@ -26,18 +26,17 @@ export default function LoginForm (props) {
 
 
   const [formData, setformData] = useState(initialState);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  
   
   const { switchToSignup } = useContext(AccountContext);
-  const redirect = props.propsLogin.location.search ? props.propsLogin.location.search.split('=')[1]:'/acceuil';
+  const redirect = props.propsLogin.location.search ? props.propsLogin.location.search.split('=')[1]:'#';
   const userSignin=useSelector((state) => state.userSignin);
   const {userInfo}=userSignin;
   
   const dispatch = useDispatch();
   const handleSubmit = (e)=>{
 e.preventDefault();   
-dispatch(signin(email,password));
+dispatch(signin(formData.email,formData.password));
 
   };
   const handleChange = (event)=>{
@@ -49,16 +48,7 @@ useEffect(()=>{
   }
 }, [props.propsLogin.history, redirect, userInfo]);
 
-const userLogin= (e)=>{
-  e.preventDefault(); 
 
-  const user={
-    email:'test@gmail.com',
-    password:'test'
-  }
-  dispatch(userLogin(user));
-
-}  
 
   return (
     <BoxContainer>

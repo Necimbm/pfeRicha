@@ -6,7 +6,7 @@ import { USER_SIGNIN_REQUEST } from "constants/userConstants";
 export const userSigninReducer =(state={}, action)=>{
     switch(action.type){ 
         case USER_SIGNIN_REQUEST:
-            return {loading:true};
+            return {loading:true,userInfo:action.payload};
 
         case USER_SIGNIN_SUCESS:
         return {loading:false, userInfo:action.payload};

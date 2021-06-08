@@ -14,6 +14,7 @@ import client from "./views/ClientLandingPage/index";
 import ProductScreen from "./views/productView/productView";
 import {Provider} from 'react-redux';
 import store from './store';
+import CartScreen from "./views/cartScreen/CartScreen";
 var hist = createBrowserHistory();
 
 window.store=store;
@@ -22,9 +23,10 @@ ReactDOM.render(
   <Provider store={store}>
   <Router history={hist}>
   <Switch>
+  <Route path="/cart/:_id?" component={CartScreen}/>
   <Route path="/profile" component={profile}/>
-  <Route path="/product/:id" component={ProductScreen}/>
-  <Route path="/matiere/:id" component={MaterielPre}/>
+  <Route path="/product/:_id" component={ProductScreen}/>
+  <Route path="/matiere/:_id" component={MaterielPre}/>
   <Route path="/acceuil" component={client}/>
   <Route path="/artisanAcceuil" component={ArtisanAcceuil}/>
   <Route path="/signin" component={Signin}/>

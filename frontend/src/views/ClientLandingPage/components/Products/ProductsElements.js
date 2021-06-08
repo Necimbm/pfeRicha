@@ -56,6 +56,7 @@ export const ProductInfo = styled.div`
 
 export const ProductDesc = styled.p`
   margin-bottom: 0.5rem;
+  line-height: 1.5;
 `;
 
 export const ProductPrice = styled.p`

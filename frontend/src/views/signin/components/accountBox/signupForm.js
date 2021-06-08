@@ -11,7 +11,7 @@ import {
   SubmitButton2,
   Home
 } from "./common";
-import { Marginer } from "../marginer";
+
 import { AccountContext } from "./accountContext";
 
 
@@ -36,17 +36,12 @@ export function SignupForm(props) {
     <BoxContainer2>
       <FormContainer2 onSubmit={handleSubmit}>
         <Input2 type="text" name="name" placeholder="Nom Complet" onChange={handleChange}/>
-        <Input2 type="email" name="email" placeholder="Email/Numéro de téléphone"  onChange={handleChange}/>
+        <Input2 type="email" name="email" placeholder="Email"  onChange={handleChange}/>
         <Input2 type="password" name="password" placeholder="Mot de passe" onChange={handleChange} />
         <Input2 type="password" name="confirmPassword" placeholder="Confirmer le mot de passe"  onChange={handleChange} /> 
         <FormControlLabel control={<Switch size="small" color="default" />} onClick={switchToAccountPro} label={<Box component="div" margin ={0} fontSize={12} fontFamily="Arial" color="#766161"> pro </Box>}/>
         <SubmitButton2 type="submit">s'inscrire</SubmitButton2>
-      </FormContainer2>      
-      <Marginer direction="vertical" margin={10} />
-     
-      <Marginer direction="vertical" margin="2em" />
-      
-      <MutedLink2 href="#">
+        <MutedLink2 href="#">
         Vous avez déja un compte ?
         <BoldLink href="#" onClick={switchToSignin}>
           Se connecter
@@ -57,6 +52,12 @@ export function SignupForm(props) {
           Acceuil 
           <Home/>
         </Home2> 
+      </FormContainer2>      
+
+     
+      
+      
+     
     </BoxContainer2>
     
   );

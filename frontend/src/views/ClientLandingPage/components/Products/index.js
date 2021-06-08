@@ -39,14 +39,14 @@ const Products = ({ heading, data }) => {
               <ProductImg src={product.img} alt={product.alt} class="flip-card-front"/>
               <ProductInfo class="flip-card-back">
                 <ProductTitle>{product.name}</ProductTitle>
-                <ProductDesc>{product.desc}</ProductDesc>
+                <ProductDesc>{product.desc}{product.seller}</ProductDesc>
                 <Rating 
                 rating={product.rating}
                 numReviews={product.numReviews}
                 ></Rating>
                 <ProductPrice>{product.price}</ProductPrice>
                
-        <ProductButton href={`/product/${product.id}`}> {product.button}</ProductButton>
+        <ProductButton href={`/product/${product._id}`}> {product.button}</ProductButton>
     
               </ProductInfo>
             </ProductCard>

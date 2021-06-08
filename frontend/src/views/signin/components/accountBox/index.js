@@ -31,6 +31,7 @@ export const BoxContainer2 = styled.div`
   position: relative;
   overflow: hidden; 
   margin-top:2rem;
+
 `;
 
 const BackDrop = styled(motion.div)`
@@ -50,19 +51,19 @@ z-index: 10;
 
 const HeaderContainer = styled.div`
   width: 100%;
-  height:100px;
-  display: flex;
-  padding-top:2rem;
+  display: column;
+  margin-top:-1.5rem;
+  align-items:center;
   justify-content: center;
-  flex-direction: column;
   z-index: 10;
+ 
 `;
 const HeaderContainer2 = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items:center;
- 
+  column-gap: 10px;
   `;
   
 
@@ -75,7 +76,7 @@ const HeaderText = styled.h2`
   color: #fff;
   font-family: "montserrat";
   font-weight: bold;
-  
+
   
 `;
 const HeaderText2 = styled.h2`
@@ -93,10 +94,8 @@ const HeaderCheckmark = styled.h2`
 padding-right: 0.5em;
   font-size: 30px;
   font-weight: 400;
-  line-height: 1.20;
   color: #fff;
   z-index: 10;
-  margin: 0;
   font-family: "montserrat";
   text-align: center;
 
@@ -107,13 +106,13 @@ const SmallText = styled.h5`
   font-weight: 500;
   font-size: 11px;
   padding:0 2rem;
+
 `;
 const SmallText2 = styled.h5`
   color: #fff;
   font-weight: 500;
   font-size: 15px;
   z-index: 11;
-  margin: 0;
   text-align:center;
   margin-top: 0px;
  
@@ -132,8 +131,7 @@ const InnerContainer2 = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 2 ;
-  padding-top: 3em;
- margin-bottom:1em;
+
 `;
 const backdropVariants2 = {
   expanded: {
@@ -211,8 +209,10 @@ export function AccountBox(props) {
          {active === "signin" && (
       
             <HeaderContainer>
+              <div>
               <HeaderText>Bienvenue à Richa <Bars2 size="25px" /> </HeaderText>
               <SmallText>Merci de se connecter !</SmallText>
+              </div>
               </HeaderContainer>
            
             )}
@@ -242,8 +242,8 @@ export function AccountBox(props) {
             transition={expandingTransition}/>
    
              <HeaderContainer2>
-               <HeaderCheckmark> <Bars2 size="50"/></HeaderCheckmark>
-              <HeaderText2>Compte Pro </HeaderText2>
+               
+              <HeaderText2><HeaderCheckmark> <Bars2 size="50"/></HeaderCheckmark>Compte Pro </HeaderText2>
               <SmallText2> Merci de s'inscrire !</SmallText2>
             </HeaderContainer2>
            

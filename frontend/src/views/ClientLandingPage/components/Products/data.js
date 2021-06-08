@@ -9,7 +9,8 @@ import braclet from '../images/braclet.jpg';
 
  const data = {
    products:[
-  { id:'1',
+  { _id:'1',
+  seller:'Zahra',
     img: product1,
     alt: 'Zarbia',
     name: 'Margoum',
@@ -19,10 +20,11 @@ import braclet from '../images/braclet.jpg';
     rating:'1.5',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:'2'
+    countInStock:0
   },
  
-  { id:'2',
+  { _id:'2',
+  seller:'Souad',
     img: product2,
     alt: 'Jebba',
     name: 'Jebba homme',
@@ -32,9 +34,10 @@ import braclet from '../images/braclet.jpg';
     rating:'2.5',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:'5'
+    countInStock:5
   },
-  { id:'3',
+  { _id:'3',
+  seller:'Lotfi',
     img: product3,
     alt: 'Farda',
     name: 'Farda',
@@ -44,9 +47,10 @@ import braclet from '../images/braclet.jpg';
     rating:'4',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:'1'
+    countInStock:1
   },
-  {id:'4',
+  { _id:'4',
+  seller:'Mohsen',
     img: product4,
     alt: 'Articles en argile',
     name: 'Fokhar',
@@ -56,22 +60,25 @@ import braclet from '../images/braclet.jpg';
     rating:'3',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:'0'
+    countInStock:0
   },
  
-  { id:'5',
+  { _id:'5',
+    seller:'Rokaia',
+    sellerLocation:'Monastir',
     img: Zarbia,
     alt: 'Jebba',
-    name: 'Jebba homme',
+    name: 'Margoum',
     desc:
-      'Jebba kamraya, couleur blanc, sur meusure',
+      'Zarbia margoum, taille 15m x 30m par',
     price: '250 DT',
     rating:'1',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:'6'
+    countInStock:6
   },
-  { id:'6',
+  { _id:'6',
+   seller:'Mounji',
     img: braclet,
     alt: 'Farda',
     name: 'Farda',
@@ -81,7 +88,7 @@ import braclet from '../images/braclet.jpg';
     rating:5,
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:'10'
+    countInStock:10
   }
 ]
 };
