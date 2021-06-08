@@ -43,8 +43,11 @@ dispatch(signin(formData.email,formData.password));
     setformData({ ...formData, [event.target.name]: event.target.value});
   };
 useEffect(()=>{ 
+  console.log(redirect);
   if(userInfo){
-    props.propsLogin.history.push(redirect); 
+    if(userInfo.role===0)
+    props.propsLogin.history.push('/acceuil'); 
+    
   }
 }, [props.propsLogin.history, redirect, userInfo]);
 
