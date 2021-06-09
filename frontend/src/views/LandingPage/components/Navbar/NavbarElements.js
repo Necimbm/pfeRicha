@@ -33,7 +33,7 @@ export const NavLink = styled(Link)`
     left: 25px;
   }
 `;
-export const NavLink2 = styled.a`
+export const NavLink2 = styled(Link)`
 display: block;
 position: absolute;
 top: 1.4rem;
@@ -48,20 +48,20 @@ p {
   font-weight: bold;
 }
 `;
-export const NavIcon = styled.div`
-  display: block;
-  position: absolute;
-  top: -0.7rem  ;
-  right: -3rem;
-  cursor: pointer;
-  color: #fff;
+export const NavIcon = styled(Link)`
+display: block;
+position: absolute;
+top: 1.4rem;
+right: 5rem;
+cursor: pointer;
+color: #fff;
+text-decoration: none;
+font-family: "montserrat";
 
-  p {
-    font-family: "montserrat";
-    transform: translate(-175%, 100%);
-    font-weight: bold;
-    right:0;
-  }
+p {
+  transform: translate(-175%, 100%);
+  font-weight: bold;
+}
 `;
 
 export const Bars = styled(FaFeather)`

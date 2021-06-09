@@ -36,31 +36,33 @@ const addToCarthandler=()=>{
       ) : (<div>
     
      </div>)} */}
-     <Link href='/acceuil'>Retourner à l'acceuil</Link>
-      <div className="row top">
      
-        <div className="col-2">
+      <div className="row top">
+    
+      <a className="return" href='/acceuil'>Retourner à l'acceuil</a>
+        <div className="col-1">
         <ProductCard>
         <ProductImg classeName=" large " src={productl.img} alt={productl.name} ></ProductImg>
         </ProductCard>
         </div>
-        <div className="col-1">
+        <div className="col-1 ">
+        <div className="col-3 ">
           <ul>
-            <li>
+            <li >
               <h1>{productl.name}</h1>
               </li>
-              <li>
-              <Rating rating={productl.rating} numReviews={productl.numReviews}></Rating>
+              <li >
+              <Rating className="flex" rating={productl.rating} numReviews={productl.numReviews}></Rating>
               </li>
-              <li>{productl.price}</li>
-              <li>Description:
+              <li className="row">Price:<p>{productl.price}</p> </li>
+              <li className="row">Description:
                 <p>{productl.desc}</p>
               </li>
 
           </ul>
         </div>
         
-        <div className="col-1">
+        <div className="col-3">
           <div className="card card-body ">
             <ul>
               <li>
@@ -114,7 +116,7 @@ const addToCarthandler=()=>{
                   
                       </ul>
                       </div> 
-                      
+                      </div>
                       </div> 
                         
         </div>  

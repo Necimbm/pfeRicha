@@ -13,6 +13,7 @@ export const Nav = styled.nav`
   position:fixed;
   z-index:1;
   background-color:#373a40 ;
+  color:white;
   
 `;
 
@@ -36,16 +37,11 @@ export const NavLink = styled(Link)`
 export const NavLink2 = styled(Link)`
 display: block;
 position: absolute;
-top: 1rem;
-right: 12rem;
+
 cursor: pointer;
 color: #fff;
 text-decoration: none;
 font-family: "montserrat";
-p {
-  transform: translate(-175%, 100%);
-  font-weight: bold;
-}
 
 `;
 

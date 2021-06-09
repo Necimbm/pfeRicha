@@ -6,7 +6,7 @@ import "./index.css";
 import Signin from "./views/signin/Signin";
 import MaterielPre from "./views/matièrePremières/productView";
 import Custom from "./views/Personnaliser/Custom";
-import Signup from "./views/signup/Signin";
+import Signup from "./views/signup/Signup";
 import acceuil from "./views/LandingPage/acceuil";
 import ArtisanAcceuil from "./views/ArtisanLandingPage/index";
 import profile from "./views/ProfilePage/ProfilePage";

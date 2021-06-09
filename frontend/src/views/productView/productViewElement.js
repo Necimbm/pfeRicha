@@ -21,7 +21,6 @@ export const ProductWrapper = styled.div`
 
 export const ProductCard = styled.div`
 margin-left:8rem;
-
   line-height: 2;
   width:60%;
   height:300px;

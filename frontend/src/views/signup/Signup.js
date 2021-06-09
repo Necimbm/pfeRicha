@@ -20,10 +20,10 @@ const AppContainer = styled.div`
  
 `;
 
-function App() {
+function App(props) {
   return (
     <AppContainer>
-      <AccountBox />
+      <AccountBox Login={props} />
     </AppContainer>
   );
 }

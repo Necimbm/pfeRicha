@@ -18,10 +18,12 @@ function App() {
   
   const productList = useSelector((state) => state.productList);
   const { loading, error, products } = productList;
+  const userSignin=useSelector((state)=>state.userSignin);
+  const {userInfo}=userSignin;
 
   useEffect(() => {
     dispatch(listProducts({}));
-
+    
   }, [dispatch]);
 
   return (

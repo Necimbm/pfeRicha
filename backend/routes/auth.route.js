@@ -23,7 +23,7 @@ router.get('/:id', auth, async(req, res)=>{
         }
         return res.status(200).json({ ...user, password: 'HHHH GOT YOU'});
     } catch (error) {
-        console.log(err.message);
+        console.log(error.message);
         return res.status(500).send('ServerError')
     }
 })
@@ -45,8 +45,8 @@ router.post('/register', [
             errors : errors.array(),
         });
     }
-    //get name ana email and password from request 
-    const {name, email , password} = req.body;
+    //get name and email and password from request 
+    const {name, email , password,role} = req.body;
     try{
         //check if user already exist
         let user = await User.findOne({email});
@@ -71,7 +71,7 @@ router.post('/register', [
 
         //create user object
         user = new User({
-            name,email,avatar,password
+            name,email,avatar,password,role
         });
 
         //encrypt password
@@ -85,7 +85,8 @@ router.post('/register', [
         const payload = {
             user : {
                 id: user._id,
-                role : user.role
+                name: user.name, 
+                
             }
         }
 
@@ -95,11 +96,11 @@ router.post('/register', [
                 expiresIn : 360000 //for development for production it will 3600 
             } , (err, token)=>{
                 if(err) throw err;
-                res.json({token}); 
+                res.json({token,payload}); 
             }
         );
     }catch(error) {
-        console.log(err.message);
+        console.log(error.message);
         res.status(500).send('Server error');
     }
 
@@ -154,9 +155,9 @@ router.post('/signin', [
         //payload for  jwt
         const payload = {
             user : {
-                id : user.id,
-                role : user.role, //?????
-                name : user.name ///!!!!!!!!!!!!
+                id : user._id,
+                role : user.role, 
+                name : user.name 
             }
         }
         jwt.sign(
@@ -166,12 +167,14 @@ router.post('/signin', [
         }, (err,token)=>{
                 if(err) throw err;
                 res.json({
-                    token
+                    token,
+                    payload
+
                 })
             }
         )
     } catch (error) {
-        console.log(err.message);
+        console.log(error.message);
         res.status(500).send('Server error');
     }
 })

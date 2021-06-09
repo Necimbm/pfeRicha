@@ -5,9 +5,29 @@ import { userSigninReducer } from 'reducers/userReducers';
 import { productListReducer } from 'reducers/productReducer';
 import { productDetailsReducer } from 'reducers/productReducer';
 import { cartReducer } from 'reducers/cartReducers';
-const initialState = {};
+import { userSignupReducer } from 'reducers/userReducers';
+const initialState = {
+    userSignup:{
+        signupInfo:localStorage.getItem('userInfo')
+        ? JSON.parse(localStorage.getItem('userInfo'))
+        :null,
+        
+    },
+    userSignin:{
+        userInfo:localStorage.getItem('userInfo')
+        ? JSON.parse(localStorage.getItem('userInfo'))
+        :null,
+        
+    },
+    cart:{
+        cartItems:localStorage.getItem('cartItems')
+        ? JSON.parse(localStorage.getItem('cartItems'))
+        :null,
+    }
+};
 const reducer = combineReducers({
-cart:cartReducer,    
+userSignup:userSignupReducer,
+cart: cartReducer,    
 userSignin: userSigninReducer,
 productList: productListReducer,
 productDetails: productDetailsReducer

@@ -15,7 +15,7 @@ import { signin } from "actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
 
 
-const initialState ={ };
+
 
 
 
@@ -25,31 +25,44 @@ export default function LoginForm (props) {
 
 
 
-  const [formData, setformData] = useState(initialState);
-  
-  
+  const [formData, setformData] = useState(null);
+  const userSignin =useSelector((state)=>state.userSignin);
+  const {userInfo} = userSignin;
+
   const { switchToSignup } = useContext(AccountContext);
-  const redirect = props.propsLogin.location.search ? props.propsLogin.location.search.split('=')[1]:'#';
-  const userSignin=useSelector((state) => state.userSignin);
-  const {userInfo}=userSignin;
+  
   
   const dispatch = useDispatch();
   const handleSubmit = (e)=>{
 e.preventDefault();   
+if(formData)
 dispatch(signin(formData.email,formData.password));
+
 
   };
   const handleChange = (event)=>{
     setformData({ ...formData, [event.target.name]: event.target.value});
   };
-useEffect(()=>{ 
-  console.log(redirect);
+
+useEffect(()=>{
+  console.log(userInfo);
   if(userInfo){
-    if(userInfo.role===0)
-    props.propsLogin.history.push('/acceuil'); 
+  if(localStorage.getItem('userInfo')){
+    console.log(JSON.parse(localStorage.getItem('userInfo')).payload.user.role);
+    switch(JSON.parse(localStorage.getItem('userInfo')).payload.user.role){
+      case 0 :return props.propsLogin.history.push('/acceuil');
+      case 1 :return props.propsLogin.history.push('/fournisseur');
+      case 2 :return props.propsLogin.history.push('/artisanAcceuil');
+      case 3 :return props.propsLogin.history.push('/admin');
+      default:;
+    }
+  }
+  
+     
+  
     
   }
-}, [props.propsLogin.history, redirect, userInfo]);
+}, [props.propsLogin.history, userInfo]);
 
 
 

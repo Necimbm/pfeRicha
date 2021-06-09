@@ -241,8 +241,8 @@ export function AccountBox(props) {
             )}
 
             <InnerContainer>
-            {active === "signin" && <LoginForm />}
-            {active === "signup" && <SignupForm />}  
+            {active === "signin" && <LoginForm propsLogin={props.Login}/>}
+            {active === "signup" && <SignupForm propsLogin={props.Login}/>}  
         </InnerContainer>
         
             </BoxContainer>
@@ -263,7 +263,7 @@ export function AccountBox(props) {
             </HeaderContainer2>
             </TopContainer>
             <InnerContainer2>
-       <Accountpro />
+       <Accountpro propsLogin={props.Login}/>
         </InnerContainer2>
             </BoxContainer2>
             )
