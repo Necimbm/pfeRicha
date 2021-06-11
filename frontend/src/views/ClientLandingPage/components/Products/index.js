@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ProductsContainer,
   ProductWrapper,
@@ -21,6 +21,8 @@ import Rating from './rating';
 
 
 const Products = ({ heading, data }) => {
+  const [filterTerm, setFilterTerm] = useState('');
+  const [data2, setdata2] = useState()
 
 
   return (
@@ -29,11 +31,13 @@ const Products = ({ heading, data }) => {
       <ProductsHeading>{heading}</ProductsHeading>
       
       <div style={{ display:'flex', justifyContent:'flex-end', margin:'1rem 1rem'}}>
-      <SearchFeature/>
+      <SearchFeature onChangeSearch={filterTerm => setFilterTerm(filterTerm)}/>
+      
       </div>
      
       <ProductWrapper>
-        {data.map((product, index) => {
+        {
+       data.map((product, index) => {
           return (
             <ProductCard key={index} class="flip-card" >
               <ProductImg src={product.img} alt={product.alt} class="flip-card-front"/>

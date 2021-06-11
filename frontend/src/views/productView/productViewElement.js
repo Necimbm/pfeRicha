@@ -35,9 +35,6 @@ margin-left:8rem;
 export const ProductImg = styled.img`
   min-height:50vh;
   width: 100%;
-  
- 
-
 `;
 
 export const ProductsHeading = styled.h1`

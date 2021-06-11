@@ -36,10 +36,10 @@ const addToCarthandler=()=>{
       ) : (<div>
     
      </div>)} */}
-     
+     <a className="return" href='/acceuil'>Retourner à l'acceuil</a>  
       <div className="row top">
     
-      <a className="return" href='/acceuil'>Retourner à l'acceuil</a>
+      
         <div className="col-1">
         <ProductCard>
         <ProductImg classeName=" large " src={productl.img} alt={productl.name} ></ProductImg>

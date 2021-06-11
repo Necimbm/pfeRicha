@@ -56,7 +56,7 @@ const Products = ({ heading, data }) => {
                 ></Rating>
                 <ProductPrice>{product.price}</ProductPrice>
                
-        <ProductButton href={`/matiere/${product.id}`}> {product.button}</ProductButton>
+        <ProductButton href={`/matiere/${product._id}`}> {product.button}</ProductButton>
     
               </ProductInfo>
             </ProductCard>

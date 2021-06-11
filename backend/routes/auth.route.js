@@ -85,7 +85,8 @@ router.post('/register', [
         const payload = {
             user : {
                 id: user._id,
-                name: user.name, 
+                name: user.name,
+                role:user.role 
                 
             }
         }

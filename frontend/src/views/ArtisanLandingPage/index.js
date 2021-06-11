@@ -7,15 +7,21 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Products from'./components/Products'
+import Products2 from'../ClientLandingPage/components/Products/index'
 import data from './components/Products/data'
-import { Nav } from './components/Navbar/NavbarElements';
-import { NavLink } from './components/Navbar/NavbarElements';
+import data2 from '../ClientLandingPage/components/Products/data'
+import { Nav } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
+import { NavLink } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
 import { Cart } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
 import { CartIcon } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
-import { NavLink2 } from 'views/Personnaliser/Component/Navbar/NavbarElements';
 import { Bars2 } from 'views/signin/components/accountBox/common';
 import { useDispatch } from 'react-redux';
 import { signout } from 'actions/userActions';
+import './styles.css';
+import { Link } from '@material-ui/core';
+import { NavLink2 } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
+import Orders from 'views/Orders/Orders';
+
 
 
 function TabPanel(props) {
@@ -58,12 +64,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleTabs() {
+export default function SimpleTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
   const userName=JSON.parse(localStorage.getItem('userInfo')).payload.user.name;
   const dispatch=useDispatch();
   const signOutHandler = ()=>{
+    props.history.push('/');
     dispatch(signout());
   }
   const handleChange = (event, newValue) => {
@@ -76,26 +83,27 @@ export default function SimpleTabs() {
       <NavLink to='#'>ريشة <Bars2/></NavLink>
         <Cart to='/cart'>Cart<CartIcon/> </Cart>
         { userName ?(
-        <div className="left-link"><ol class="main-menu">
-           <li class="main-item">
-    <NavLink2 to='/'>{userName}</NavLink2>
-      <ol class="sub-menu">
-      <li class="sub-item item-left"><a href="/"><span class="small" onClick={signOutHandler} ></span></a></li>
-        <li class="sub-item item-left"></li>
-        <li class="sub-item item-left"><a href="/Profile"><span class="big" ></span></a></li>
-      </ol>
-      
-    </li>
-  </ol></div>
-        
+         <div className="menu">
+         <ol class="main-menu">
+         <li class="main-item"><span><NavLink2 to="/acceuil">{userName}</NavLink2></span>
+             <ol class="sub-menu">
+               <li class="sub-item item-right"><span class="premium" onClick={signOutHandler}></span></li>
+               <li class="sub-item item-right"><span class="combo"></span></li>
+               
+             </ol>
+           </li>
+           
+          
+         </ol>
+         </div>
 
 ):(null)
         }
         
         <Tabs style={{top:'0',position:'absolute'}}value={value} onChange={handleChange} aria-label="">
-          <Tab style={{color:"white",fontSize:'20px',fontFamily:'montserrat',fontWeight:'bold'}} label="Acceuil" {...a11yProps(0)} />
-          <Tab style={{color:"white",fontSize:'20px',fontFamily:'montserrat',fontWeight:'bold'}} label="Item Two" {...a11yProps(1)} />
-          <Tab  style={{color:"white",fontSize:'20px',fontFamily:'montserrat',fontWeight:'bold'}}label="Item Three" {...a11yProps(2)} />
+          <Tab style={{color:"orange",fontSize:'15px',fontFamily:'montserrat',fontWeight:'bold'}} label="Matières Premières" {...a11yProps(0)} />
+          <Tab  style={{color:"orange",fontSize:'15px',fontFamily:'montserrat',fontWeight:'bold'}}label="Produit Artisanals" {...a11yProps(2)} />
+          <Tab  style={{color:"orange",fontSize:'15px',fontFamily:'montserrat',fontWeight:'bold'}}label="Orders" {...a11yProps(2)} />
         </Tabs>
        
         </Nav> 
@@ -104,10 +112,10 @@ export default function SimpleTabs() {
         <Products heading='Trouver votre matière Première' data={data.products}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        
+      <Products heading='Trouver les articles artisanaux' data={data2.products}/> 
       </TabPanel>
       <TabPanel value={value} index={2}>
-        
+        <Orders/>
       </TabPanel>
     </div>
   );

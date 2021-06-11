@@ -5,11 +5,11 @@ import {Input} from 'antd';
 const {Search} = Input;
 
 function SearchFeature(props) {
-
     const [SeacrhTerms,setSearchTerms]= useState("")
     const onChangeSearch=  (event)=>{
-         setSearchTerms(event.currentTarget.value)
-         props.refreshFunction(event.currentTarget.value)
+        props.onChangeSearch(SeacrhTerms);
+        setSearchTerms(event.currentTarget.value);
+        
     }
 
     return (

@@ -1,5 +1,6 @@
 {
   "name": "pfe",
+  "type": "module",
   "version": "1.0.0",
   "description": "pfe project",
   "main": "index.js",
@@ -14,7 +15,8 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
   },
   "devDependencies": {
     "eslint": "^7.28.0",

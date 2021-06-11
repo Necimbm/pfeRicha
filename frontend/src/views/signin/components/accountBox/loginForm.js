@@ -45,10 +45,8 @@ dispatch(signin(formData.email,formData.password));
   };
 
 useEffect(()=>{
-  console.log(userInfo);
   if(userInfo){
   if(localStorage.getItem('userInfo')){
-    console.log(JSON.parse(localStorage.getItem('userInfo')).payload.user.role);
     switch(JSON.parse(localStorage.getItem('userInfo')).payload.user.role){
       case 0 :return props.propsLogin.history.push('/acceuil');
       case 1 :return props.propsLogin.history.push('/fournisseur');

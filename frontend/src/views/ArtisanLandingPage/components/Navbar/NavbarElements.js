@@ -37,7 +37,10 @@ export const NavLink = styled(Link)`
 export const NavLink2 = styled(Link)`
 display: block;
 position: absolute;
-
+right:0;
+top:0;
+margin-top:1rem;
+margin-right:15rem;
 cursor: pointer;
 color: #fff;
 text-decoration: none;

@@ -20,7 +20,7 @@ export const ProductWrapper = styled.div`
 `;
 
 export const ProductCard = styled.div`
-  margin: 5vh 1rem;
+margin-left:8rem;
   line-height: 2;
   width:60%;
   height:300px;
@@ -35,7 +35,7 @@ export const ProductCard = styled.div`
 export const ProductImg = styled.img`
   min-height:50vh;
   width: 100%;
-  padding: 5px;
+  
  
 
 `;
