@@ -38,14 +38,14 @@ export default function OrderListScreen(props) {
             ) : error ? (
                 <MessageBox variant="danger">{error}</MessageBox>
             ) : ( */}
-            <table className="table">
+            <table className="tableOrder">
                 <thead>
                     <tr>
-                        <th>Client</th>
+                        <th>CLIENT</th>
                         <th>DATE</th>
                         <th>TOTAL</th>
                         <th>DELIVERED</th>
-                        <th>ACTIONS</th>
+                        <th>ORDER STATE</th>
                     </tr>
                 </thead>
                 <tbody>

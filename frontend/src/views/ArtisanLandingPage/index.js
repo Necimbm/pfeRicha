@@ -24,7 +24,7 @@ import Orders from 'views/Orders/Orders';
 
 
 
-function TabPanel(props) {
+function Acceuil(props) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -44,7 +44,7 @@ function TabPanel(props) {
   );
 }
 
-TabPanel.propTypes = {
+Acceuil.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired,
@@ -69,6 +69,7 @@ export default function SimpleTabs(props) {
   const [value, setValue] = React.useState(0);
   const userName=JSON.parse(localStorage.getItem('userInfo')).payload.user.name;
   const dispatch=useDispatch();
+
   const signOutHandler = ()=>{
     props.history.push('/');
     dispatch(signout());
@@ -78,7 +79,7 @@ export default function SimpleTabs(props) {
   };
 
   return (
-    <div className={classes.root}>
+    <div>
       <Nav>
       <NavLink to='#'>ريشة <Bars2/></NavLink>
         <Cart to='/cart'>Cart<CartIcon/> </Cart>
@@ -108,15 +109,15 @@ export default function SimpleTabs(props) {
        
         </Nav> 
         
-      <TabPanel value={value} index={0}>
+      <Acceuil value={value} index={0}>
         <Products heading='Trouver votre matière Première' data={data.products}/>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
+      </Acceuil>
+      <Acceuil value={value} index={1}>
       <Products heading='Trouver les articles artisanaux' data={data2.products}/> 
-      </TabPanel>
-      <TabPanel value={value} index={2}>
+      </Acceuil>
+      <Acceuil value={value} index={2}>
         <Orders/>
-      </TabPanel>
+      </Acceuil>
     </div>
   );
 }

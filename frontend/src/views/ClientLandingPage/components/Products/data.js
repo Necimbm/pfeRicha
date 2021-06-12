@@ -52,11 +52,11 @@ import braclet from '../images/braclet.jpg';
   { _id:'4',
   seller:'Mohsen',
     img: product4,
-    alt: 'Articles en argile',
-    name: 'Fokhar',
+    alt: 'Jars en argile',
+    name: 'Jars',
     desc:
-      'Toute article de décoration en argile ',
-    price: 'à partir de 50dt',
+      'Jars de décoration en argile ',
+    price: ' 50 DT',
     rating:'3',
     numReviews:10,
     button: 'Ajouter au panier',
@@ -90,6 +90,6 @@ import braclet from '../images/braclet.jpg';
     button: 'Ajouter au panier',
     countInStock:10
   }
-]
-};
+]}
+;
 export default data;

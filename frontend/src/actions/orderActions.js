@@ -31,15 +31,18 @@ export const createOrder = (order) => async (dispatch, getState) => {
     try {
         const {
             userSignin: { userInfo },
+            
         } = getState();
-        const { data } = await Axios.post('/api/orders', order, {
+        const { data } = await Axios.post('/api/orders/', order, {
             headers: {
                 Authorization: `Bearer ${userInfo.token}`,
             },
-        });
+            
+        }
+        );
         dispatch({ type: ORDER_CREATE_SUCCESS, payload: data.order });
         dispatch({ type: CART_EMPTY });
-        localStorage.removeItem('cartItems');
+        localStorage.removeItem('cartItems','shippingAddress','shippingAddress');
     } catch (error) {
         dispatch({
             type: ORDER_CREATE_FAIL,

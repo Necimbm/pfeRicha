@@ -134,11 +134,7 @@ router.post('/signin', [
 
         //if user not found in database
         if(!user){
-            return res.status(400).json({
-                errors : [{
-                    msg : 'Invalid credentials'
-                }]
-            })
+            res.status(401).send({ message: 'Compte non trouvé' });
         }
 
         //now user founded by email let's compare passwords
@@ -146,11 +142,7 @@ router.post('/signin', [
 
         //passwords don't match
         if(!isMatch){
-            return res.status(400).json({
-                errors : [{
-                    msg : 'Invalid credentials'
-                }]
-            })
+            res.status(401).send({ message: 'Mot de passe Invalid !!' });
         }
 
         //payload for  jwt

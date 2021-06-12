@@ -1,29 +1,28 @@
 import Axios from "axios"
+import { CART_SAVE_PAYMENT_METHOD } from "constants/cartConstants";
+import { CART_SAVE_SHIPPING_ADDRESS } from "constants/cartConstants";
 import { CART_ADD_ITEM_FAIL } from "constants/cartConstants";
 import { CART_REMOVE_ITEM } from "constants/cartConstants";
 import { CART_ADD_ITEM } from "constants/cartConstants";
-import product from '../data'
+
 
 export const addToCart=(productId,qty)=> async(dispatch,getState)=>{
-    const data = product.products.find(x=> x._id === productId);
+    const data = await Axios.get(`/api/product/${productId}`);
+   
+    console.log(data);
     const {
       cart: { cartItems },
     } = getState();
-    if (cartItems.length > 0 && data.seller._id !== cartItems[0].seller._id) {
-      dispatch({
-        type: CART_ADD_ITEM_FAIL,
-        payload: `Can't Add To Cart. Buy only from ${cartItems[0].seller.seller.name} in this order`,
-      });
-    } else {
+   
       dispatch({
         type: CART_ADD_ITEM,
         payload: {
-          name: data.name,
-          image: data.img,
-          price: data.price,
-          countInStock: data.countInStock,
-          product: data._id,
-          seller: data.seller,
+          name: data.data.name,
+          image: data.data.image,
+          price: data.data.price,
+          countInStock: data.data.countInStock,
+          product: data.data._id,
+          seller: data.data.seller,
           qty,
         },
       });
@@ -31,9 +30,17 @@ export const addToCart=(productId,qty)=> async(dispatch,getState)=>{
         'cartItems',
         JSON.stringify(getState().cart.cartItems)
       );
-    }
+    
   };
   export const removeFromCart = (productId) => (dispatch, getState) => {
     dispatch({ type: CART_REMOVE_ITEM, payload: productId });
     localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+  };
+  export const saveShippingAddress = (data) => (dispatch) => {
+    dispatch({ type: CART_SAVE_SHIPPING_ADDRESS, payload: data });
+    localStorage.setItem('shippingAddress', JSON.stringify(data));
+  };
+  export const savePaymentMethod = (data) => (dispatch) => {
+    dispatch({ type: CART_SAVE_PAYMENT_METHOD, payload: data });
+    localStorage.setItem('PaymentMethod', JSON.stringify(data));
   };

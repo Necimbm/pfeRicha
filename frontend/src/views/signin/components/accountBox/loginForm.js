@@ -13,7 +13,9 @@ import {
 import { AccountContext } from "./accountContext";
 import { signin } from "actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
-
+import LoadingBox from "views/components/LoadingBox";
+import MessageBox from "views/components/MessageBox";
+import { listProducts } from "actions/productActions";
 
 
 
@@ -27,7 +29,7 @@ export default function LoginForm (props) {
 
   const [formData, setformData] = useState(null);
   const userSignin =useSelector((state)=>state.userSignin);
-  const {userInfo} = userSignin;
+  const {userInfo, loading, error } = userSignin;
 
   const { switchToSignup } = useContext(AccountContext);
   
@@ -37,7 +39,7 @@ export default function LoginForm (props) {
 e.preventDefault();   
 if(formData)
 dispatch(signin(formData.email,formData.password));
-
+dispatch(listProducts({}));
 
   };
   const handleChange = (event)=>{
@@ -54,6 +56,7 @@ useEffect(()=>{
       case 3 :return props.propsLogin.history.push('/admin');
       default:;
     }
+    
   }
   
      
@@ -66,7 +69,9 @@ useEffect(()=>{
 
   return (
     <BoxContainer>
+        
       <FormContainer onSubmit={handleSubmit}> 
+      {error && <div style={{color:"red",fontSize:"10px",textAlign:"center",position:"absolute",left:"0",top:"0",marginTop:"18rem",marginLeft:"4rem",opacity:"50%"}}>{error}</div>}
         <Input id="email" type="email" name="email" placeholder="Email" onChange={handleChange} />
         <Input id="password" type="password" name="password" placeholder="Mot de passe" onChange={handleChange}  />
         <MutedLink href="#">Mot de passe oublié ?</MutedLink>

@@ -15,6 +15,12 @@ import ProductScreen from "./views/productView/productView";
 import {Provider} from 'react-redux';
 import store from './store';
 import CartScreen from "./views/cartScreen/CartScreen";
+import CheckoutSteps from './views/CheckoutSteps/ChekoutSteps'
+import OrderScreen from './views/CheckoutSteps/OrderScreen';
+import ShippingScreen from "views/CheckoutSteps/ShippingScreen";
+import CreditCardPayment from "views/CheckoutSteps/CreditCardPayment";
+import OrderPlacement from "views/CheckoutSteps/OrderPlacement";
+import PaymentMethodScreen from "views/CheckoutSteps/PaymentMethodScreen";
 var hist = createBrowserHistory();
 
 window.store=store;
@@ -32,6 +38,12 @@ ReactDOM.render(
   <Route path="/signin" component={Signin}/>
   <Route path="/signup" component={Signup}/>
   <Route path="/custom" component={Custom}/>
+   <Route path="/checkoutsteps" component={CheckoutSteps}/>
+  <Route path="/order:id" component={OrderScreen}/>
+  <Route path="/shipping" component={ShippingScreen}/>
+  <Route path="/payment" component={PaymentMethodScreen}/>
+  <Route path="/creditcard" component={CreditCardPayment}/>
+  <Route path="/placeorder" component={OrderPlacement}/>
   <Route path="/" component={acceuil}/>
   </Switch>
 </Router>

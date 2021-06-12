@@ -6,6 +6,11 @@ import { Nav } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
 import { addToCart, removeFromCart } from '../../actions/cartActions';
 import MessageBox from '../components/MessageBox';
 import './styles.css'
+
+
+
+
+
 export default function CartScreen(props) {
   const productId = props.match.params._id;
   const qty = props.location.search
@@ -16,7 +21,7 @@ export default function CartScreen(props) {
   const { cartItems, error } = cart;
   const dispatch = useDispatch();
   useEffect(() => {
-    
+
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
@@ -28,12 +33,12 @@ export default function CartScreen(props) {
   };
 
   const checkoutHandler = () => {
-    props.history.push('/');
+    props.history.push('/shipping');
   };
   return (<div>
-    
+<a className="return" href='/acceuil'>Retourner à l'acceuil</a>
     <div className="row top">
-      <Link to="/acceuil">Acceuil</Link>
+    
       <div className="col-2">
         <h1>Shopping Cart</h1>
         {error && <MessageBox variant="danger">{error}</MessageBox>}
@@ -109,6 +114,6 @@ export default function CartScreen(props) {
         </div>
       </div>
     </div>
-    </div>
+  </div>
   );
 }

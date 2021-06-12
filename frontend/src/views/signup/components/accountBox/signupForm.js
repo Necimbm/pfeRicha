@@ -57,23 +57,24 @@ export function SignupForm(props) {
         <Input2 type="password" name="password" placeholder="Mot de passe" onChange={handleChange} />
         <Input2 type="password" placeholder="Confirmer le mot de passe" onChange={handleChange} />
         <FormControlLabel control={<Switch size="small" color="default" />} onClick={switchToAccountPro} label={<Box component="div" margin={0} fontSize={12} fontFamily="Arial" color="#766161"> pro </Box>} />
-        <Marginer direction="vertical" margin={10} />
+       
         <SubmitButton2 type="submit">s'inscrire</SubmitButton2>
-        <Marginer direction="vertical" margin="2em" />
-      </FormContainer2>
-
-
-      <MutedLink2 href="#">
+        <Marginer direction="vertical" margin="1em" />
+        <MutedLink2 href="#">
         Vous avez déja un compte ?
         <BoldLink href="#" onClick={switchToSignin}>
           Se connecter
         </BoldLink>
-
       </MutedLink2>
+      <Marginer direction="vertical" margin="1em" />
       <Home2 href="/"  >
         Acceuil
         <Home />
       </Home2>
+      </FormContainer2>
+
+
+      
     </BoxContainer2>
 
   );

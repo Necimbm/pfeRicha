@@ -13,33 +13,19 @@ import data from './components/Products/data'
 const AppContainer = styled.div` 
 `;
 
-function App() {
+function App(props) {
   const dispatch = useDispatch();
-  
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
-  const userSignin=useSelector((state)=>state.userSignin);
-  const {userInfo}=userSignin;
-
+  const productList = JSON.parse(localStorage.getItem('productsList'))
   useEffect(() => {
-    dispatch(listProducts({}));
     
   }, [dispatch]);
 
   return (
-    <AppContainer>
-      {/* {loading ? (
-        <LoadingBox></LoadingBox>
-      ) : error ? (
-        <MessageBox variant="danger">{error}</MessageBox>
-      ) : (<div>
-    
-     </div>)} */}
-      <Navbar/>
-     <Products heading='Votre meilleur choix' data={data.products}/>
+        <AppContainer>
+        <Navbar props={props}/>
+     <Products heading='Votre meilleur choix' data={productList}/>
      <Footer/>
-
-    </AppContainer>
+     </AppContainer>
   );
 }
 

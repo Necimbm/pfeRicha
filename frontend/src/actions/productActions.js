@@ -29,7 +29,8 @@ export const listProducts = () => async (dispatch) => {
   });
   try {
     const { data } = await Axios.get(`/api/products`);
-    dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
+    dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data});
+    localStorage.setItem("productsList",JSON.stringify(data));
   } catch (error) {
     dispatch({ type: PRODUCT_LIST_FAIL, payload: error.message });
   }
@@ -52,6 +53,7 @@ export const detailsProduct = (productId) => async (dispatch) => {
   try {
     const { data } = await Axios.get(`/api/products/${productId}`);
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
+     localStorage.setItem("productsList",JSON.stringify(data));
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAILS_FAIL,

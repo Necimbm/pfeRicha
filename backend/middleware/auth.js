@@ -2,10 +2,10 @@
 const { response } = require('express');
 const jwt = require ('jsonwebtoken');
 
-module.exports = function (req, res, next){
+module.exports =isAuth=function (req, res, next){
     //get token from header 
     const token = req.header('x-auth-token');
-
+    console.log(req.user);
     //check if no token
     if (!token){
         return response.status(401).json({
@@ -18,12 +18,30 @@ module.exports = function (req, res, next){
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         //set user id in req.user
         req.user = decoded.user;
+        
         next()
     } catch (error) {
         req.status(404).json({
             msg : "Token is not valid"
         })
     }
-}
+};
 
-//we will implement categories and products 
+
+module.exports = isAdmin = (req, res, next) => {
+    if (req.user && (req.user.role=3)) {
+      next();
+    } else {
+      res.status(401).send({ message: 'Invalid Admin Token' });
+    }
+  };
+
+  module.exports = isSeller = (req, res, next) => {
+    if (req.user && (req.user.role=1)) {
+      next();
+    } else {
+      res.status(401).send({ message: 'Invalid Seller Token' });
+    }
+  };
+
+

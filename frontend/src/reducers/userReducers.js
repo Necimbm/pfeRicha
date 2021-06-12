@@ -21,7 +21,7 @@ export const userSigninReducer =(state={}, action)=>{
                 return state;
     }
 }
-// email@gmail.com password2
+
 export const userSignupReducer =(state={}, action)=>{
     switch(action.type){ 
         case USER_SIGNUP_REQUEST:
