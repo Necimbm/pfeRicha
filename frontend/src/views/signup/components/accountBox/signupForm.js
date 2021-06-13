@@ -15,7 +15,7 @@ import { Marginer } from "../marginer";
 import { AccountContext } from "./accountContext";
 import { signup } from "actions/userActions";
 import { useDispatch, useSelector } from "react-redux";
-
+import { listProducts } from "actions/productActions";
 
 
 export function SignupForm(props) {
@@ -30,8 +30,7 @@ export function SignupForm(props) {
     e.preventDefault();
     if (formData)
       dispatch(signup(formData.email, formData.password, formData.name, formData.role));
-
-
+      dispatch(listProducts({}));
   };
   const handleChange = (event) => {
     setformData({ ...formData, [event.target.name]: event.target.value, role: 0 });

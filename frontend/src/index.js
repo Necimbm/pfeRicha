@@ -16,7 +16,7 @@ import {Provider} from 'react-redux';
 import store from './store';
 import CartScreen from "./views/cartScreen/CartScreen";
 import CheckoutSteps from './views/CheckoutSteps/ChekoutSteps'
-import OrderScreen from './views/CheckoutSteps/OrderScreen';
+import OrderScreen from './views/Orders/Order';
 import ShippingScreen from "views/CheckoutSteps/ShippingScreen";
 import CreditCardPayment from "views/CheckoutSteps/CreditCardPayment";
 import OrderPlacement from "views/CheckoutSteps/OrderPlacement";
@@ -39,7 +39,7 @@ ReactDOM.render(
   <Route path="/signup" component={Signup}/>
   <Route path="/custom" component={Custom}/>
    <Route path="/checkoutsteps" component={CheckoutSteps}/>
-  <Route path="/order:id" component={OrderScreen}/>
+  <Route path="/order/:_id" component={OrderScreen}/>
   <Route path="/shipping" component={ShippingScreen}/>
   <Route path="/payment" component={PaymentMethodScreen}/>
   <Route path="/creditcard" component={CreditCardPayment}/>

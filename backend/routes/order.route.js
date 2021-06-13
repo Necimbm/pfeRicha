@@ -9,11 +9,14 @@ const router = express.Router();
 
 const Order = require('../models/Order');
 const User = require('../models/User');
-const Product = require('../models/Product');
 
 
 
-
+router.get('/', (req , res , next)=>{
+  Order.find()
+  .then(orders => res.status(200).json(orders))
+  .catch(error => res.status(404).json({ error }));
+});
 router.post('/',expressAsyncHandler(async(req,res)=>{
     //chacking if oreder item contain item or not
     if(req.body.orderItems.lenght === 0){
@@ -39,8 +42,22 @@ router.post('/',expressAsyncHandler(async(req,res)=>{
 }
 }));
 
-
-
+router.use(
+  '/:id',
+  expressAsyncHandler(async (req, res,next) => {
+    Order.findOne({
+      _id : req.params.id 
+    }).then((order)=>{
+        res.status(200).json(order);
+    }).catch(
+        (error)=>{
+            res.status(404).json({
+                error:error
+            })
+        }
+    )
+})
+  );
 
  router.delete('/:id', isAuth, isAdmin, expressAsyncHandler(async (req, res) => {
       const order = await Order.findById(req.params.id);

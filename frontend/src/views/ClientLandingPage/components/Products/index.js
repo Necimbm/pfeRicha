@@ -21,10 +21,6 @@ import MessageBox from 'views/components/MessageBox';
 
 
 const Products = ({ heading, data }) => {
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
-  
-console.log(data);
 
   return (
 

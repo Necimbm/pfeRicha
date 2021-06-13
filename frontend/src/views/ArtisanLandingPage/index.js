@@ -20,7 +20,7 @@ import { signout } from 'actions/userActions';
 import './styles.css';
 import { Link } from '@material-ui/core';
 import { NavLink2 } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
-import Orders from 'views/Orders/Orders';
+import OrderListScreen from 'views/Orders/OrdersList';
 
 
 
@@ -86,7 +86,7 @@ export default function SimpleTabs(props) {
         { userName ?(
          <div className="menu">
          <ol class="main-menu">
-         <li class="main-item"><span><NavLink2 to="/acceuil">{userName}</NavLink2></span>
+         <li class="main-item"><span><NavLink2 to="/artisanAcceuil">{userName}</NavLink2></span>
              <ol class="sub-menu">
                <li class="sub-item item-right"><span class="premium" onClick={signOutHandler}></span></li>
                <li class="sub-item item-right"><span class="combo"></span></li>
@@ -116,7 +116,7 @@ export default function SimpleTabs(props) {
       <Products heading='Trouver les articles artisanaux' data={data2.products}/> 
       </Acceuil>
       <Acceuil value={value} index={2}>
-        <Orders/>
+        <OrderListScreen orderProps={props}/>
       </Acceuil>
     </div>
   );

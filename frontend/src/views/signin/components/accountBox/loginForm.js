@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingBox from "views/components/LoadingBox";
 import MessageBox from "views/components/MessageBox";
 import { listProducts } from "actions/productActions";
+import { listOrders } from "actions/orderActions";
 
 
 
@@ -40,6 +41,7 @@ e.preventDefault();
 if(formData)
 dispatch(signin(formData.email,formData.password));
 dispatch(listProducts({}));
+dispatch(listOrders({}));
 
   };
   const handleChange = (event)=>{

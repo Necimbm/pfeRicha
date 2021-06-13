@@ -30,42 +30,15 @@ export default function PaymentMethodScreen(props) {
         </div>
         <div>
           <div>
-            <ReactCircleModal
-      backgroundColor="rgba(166, 174, 179, 0.61)  "
-    
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-
-      toogleComponent={onClick => (
-        <input
+          <input
               type="radio"
               id="paypal"
               value="Carte Bancaire"
               name="paymentMethod"
               required
-              onClick={onClick}
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
-            
-      )}
-     
-    >
-      {(onClick) => (
-        <popup>
-        <div style={{ display:"flex", alignItems:"center", justifyContent:"center"}}>
-         <div><PaymentForm/>
-         <button style={{ width:"100%"}} className="primary" onClick={onClick}>confirmer</button>
-         </div> 
-         </div> 
-          
-          
-        </popup>
-      )}
-    </ReactCircleModal>
             <label htmlFor="paypal">Carte Bancaire</label>
-       
-      
           </div>
         </div>
         <div>
@@ -79,6 +52,20 @@ export default function PaymentMethodScreen(props) {
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
             <label htmlFor="stripe">Paiement à la livraison</label>
+          </div>
+        </div>
+        
+        <div>
+          <div>
+            <input
+              type="radio"
+              id="stripe"
+              value="PayPal"
+              name="paymentMethod"
+              required
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            ></input>
+            <label htmlFor="stripe">PayPal</label>
           </div>
         </div>
         <div>
