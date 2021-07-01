@@ -23,7 +23,7 @@ export default function PlaceOrderScreen(props) {
     cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   );
   cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10);
-  cart.taxPrice = toPrice(0.15 * cart.itemsPrice);
+  cart.taxPrice = toPrice(0.009 * cart.itemsPrice);
   cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
   const dispatch = useDispatch();
   const placeOrderHandler = () => {
@@ -43,25 +43,25 @@ export default function PlaceOrderScreen(props) {
           <ul>
             <li>
               <div className="card card-body">
-                <h2>Shipping</h2>
+                <h2 style={{fontFamily:"montserrat"}}>Livraison</h2>
                 <p>
-                  <strong>Name: {cart.shippingAddress.fullName}</strong><br />
-                  <strong>Address: {cart.shippingAddress.address},
+                  <strong>Prénom: {cart.shippingAddress.fullName}</strong><br />
+                  <strong>Addresse: {cart.shippingAddress.address},
                   {cart.shippingAddress.city}, {cart.shippingAddress.postalCode}</strong> 
                 </p>
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Payment</h2>
-                <p>
-                  <strong>Method: {cart.paymentMethod}</strong> 
+                <h2 style={{fontFamily:"montserrat"}}>Paiement</h2>
+                <p >
+                  <strong>Méthode de paiement: {cart.paymentMethod}</strong> 
                 </p>
               </div>
             </li>
             <li>
               <div className="card card-body">
-                <h2>Order Items</h2>
+                <h2 style={{fontFamily:"montserrat"}}>Articles</h2>
                 <ul>
                   {cart.cartItems.map((item) => (
                     <li key={item.product}>
@@ -94,17 +94,17 @@ export default function PlaceOrderScreen(props) {
           <div className="card card-body">
             <ul>
               <li>
-                <h2>Order Summary</h2>
+                <h2 style={{fontFamily:"montserrat"}}>Résumée</h2>
               </li>
               <li>
                 <div className="row">
-                  <div>Items</div>
+                  <div >Articles</div>
                   <div>{cart.itemsPrice.toFixed(2)} DT</div>
                 </div>
               </li>
               <li>
                 <div className="row">
-                  <div>Shipping</div>
+                  <div>Livraison</div>
                   <div>{cart.shippingPrice.toFixed(2)} DT</div>
                 </div>
               </li>
@@ -117,7 +117,7 @@ export default function PlaceOrderScreen(props) {
               <li>
                 <div className="row">
                   <div>
-                    <strong> Order Total</strong>
+                    <strong>Prix Total</strong>
                   </div>
                   <div>
                     <strong>{cart.totalPrice.toFixed(2)} DT</strong>
@@ -131,11 +131,11 @@ export default function PlaceOrderScreen(props) {
                   className="primary block"
                   disabled={cart.cartItems.length === 0}
                 >
-                  Place Order
+                  Placer Commande
                 </button>
               </li>
-                {/* {loading && <LoadingBox></LoadingBox>}
-                {error && <MessageBox variant="danger">{error}</MessageBox>} */}
+                {loading && <LoadingBox></LoadingBox>}
+                {error && <MessageBox variant="danger">{error}</MessageBox>} 
             </ul>
           </div>
         </div>

@@ -24,7 +24,7 @@ router.post('/add',(req, res, next)=>{
 });
 
 //listting all the products
-router.use('/product/:id', (req, res, next)=> {
+router.get('/product/:id', (req, res, next)=> {
     Product.findOne({
       _id : req.params.id 
     }).then((product)=>{
@@ -45,24 +45,12 @@ router.get('/products', (req , res , next)=>{
     .catch(error => res.status(404).json({ error }));
 });
 
-// //updatting product by id
-// router.put('/:id', craftManAuth,(req, res, next) => {
-//     Product.updateOne({ _id : req.params.id}, {
-//         ...req.body,
-//         _id : req.params.id
-//     })
-//     .then(()=> res.status(200).json({message : 'Product updated !'}))
-//     .catch(error => res.status(400).json({ error }));
-// });
-
-// //updatting ratting
-
-// //deletting product
-// router.delete('/:id',craftManAuth,(req, res, next)=>{
-//     Product.deleteOne({_id : req.params.id})
-//     .then(() => res.status(200).json({ message : 'Product have been deleted ! '}))
-//     .catch(error => res.status(400).json({ error }));
-// });
+//deletting product
+router.delete('/:id',(req, res, next)=>{
+    Product.deleteOne({_id : req.params.id})
+    .then(() => res.status(200).json({ message : 'Product have been deleted ! '}))
+    .catch(error => res.status(400).json({ error }));
+});
 
 
 

@@ -33,7 +33,8 @@ export const signup=(email, password,name,role) => async(dispatch)=>{
     
         const {data}= await axios.post('/api/user/register', {email,password,name,role});
         dispatch({type: USER_SIGNUP_SUCESS, payload:data});
-        localStorage.setItem("userInfo",JSON.stringify(data));
+        dispatch({ type: USER_SIGNIN_SUCESS, payload: data });
+        localStorage.setItem('userInfo', JSON.stringify(data));
     
     } catch(error){
         dispatch({

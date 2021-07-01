@@ -24,7 +24,7 @@ export default function Descrption(props) {
   }, [dispatch, productlId]);
 
   const addToCarthandler = () => {
-    props.history.push(`/cart/${productlId}?qty=${qty}`)
+    props.history.push(`/cartArtisan/${productlId}?qty=${qty}`)
   }
 
   return <div >

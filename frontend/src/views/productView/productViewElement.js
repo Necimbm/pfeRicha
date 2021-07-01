@@ -20,16 +20,17 @@ export const ProductWrapper = styled.div`
 `;
 
 export const ProductCard = styled.div`
-margin-left:8rem;
-  line-height: 2;
+margin-left:5rem;
+  line-height:2;
   width:60%;
-  height:300px;
+  height:200px;
   display:flex;
-  min-height:90vh;
+  min-height:86vh;
   padding:1rem;
-  box-shadow: 0 0 10px 0  rgba(15, 15, 15, 0.50);
+  box-shadow: 0 0 10px 0  rgba(15, 15, 15, 1);
   // background: #fff ;
   color: #000;
+  margin-bottom: 3rem;
   `;
 
 export const ProductImg = styled.img`

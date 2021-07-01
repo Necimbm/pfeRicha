@@ -28,8 +28,17 @@ const productSchema = new mongoose.Schema({
     },
     numReviews :{
         type : Number,
+        
+    },
+    category :{
+        type : String,
         required : true,
+    },
+    seller:{
+        type : String,
+        required : true, 
     }
+
 
 },{
     timestamps:true

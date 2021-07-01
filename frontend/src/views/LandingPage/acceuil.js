@@ -26,7 +26,7 @@ export default function Acceuil() {
      <Navbar toggle={toggle}> </Navbar>
     <Sidebar isOpen={isOpen} toggle={toggle} />
       <Hero />
-      <Products heading='Votre meilleur choix' data={productData} />
+      <Products heading='Top Ventes ' data={productData} />
       <FeatureSection />
       <Products heading='Personnaliser votre commande' data={productDataTwo} />
       <Apropos />

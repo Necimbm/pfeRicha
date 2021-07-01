@@ -36,9 +36,10 @@ export default function ShippingAddressScreen(props) {
   return (
   <div>
     <CheckoutSteps step1/>
-      <form className="form" onSubmit={submitHandler}>
+    <div  style={{backgroundImage:"url(/images/livraison.jpg)",paddingBottom:"3.7rem"}}>
+      <form className="form card" onSubmit={submitHandler}>
         <div>
-          <h1>Addresse de livraison</h1>
+          <h1 style={{fontFamily:"montserrat"}}>Addresse de livraison</h1>
         </div>
         <div>
           <label htmlFor="fullName">Nom complet</label>
@@ -87,6 +88,7 @@ export default function ShippingAddressScreen(props) {
         <div> <label/>
           <button className="primary" type="submit" >Continuer</button> </div>
       </form>
+      </div>
    </div>
   );
 }

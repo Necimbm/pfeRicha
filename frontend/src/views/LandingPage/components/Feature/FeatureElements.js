@@ -26,13 +26,13 @@ export const FeatureContainer = styled.div`
   }
 `;
 export const FeatureButton = styled.button`
-  font-size: 1.4rem;
-  padding: 0.6rem 3rem;
+  font-size: 2rem;
+  padding:2rem;
   border: none;
   background: #ffc500;
   color: #000;
   transition: 0.2s ease-out;
-  border-radius:0px;
+  border-radius:50px;
   &:hover {
     color: #fff;
     background: #373a40;

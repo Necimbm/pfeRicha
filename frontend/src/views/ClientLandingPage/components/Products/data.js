@@ -20,7 +20,8 @@ import braclet from '../images/braclet.jpg';
     rating:'1.5',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:0
+    countInStock:0,
+    category:"house"
   },
  
   { _id:'2',
@@ -34,7 +35,8 @@ import braclet from '../images/braclet.jpg';
     rating:'2.5',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:5
+    countInStock:5,
+    category:"clothes"
   },
   { _id:'3',
   seller:'Lotfi',
@@ -47,7 +49,8 @@ import braclet from '../images/braclet.jpg';
     rating:'4',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:1
+    countInStock:1,
+    category:"colier"
   },
   { _id:'4',
   seller:'Mohsen',
@@ -60,7 +63,8 @@ import braclet from '../images/braclet.jpg';
     rating:'3',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:0
+    countInStock:0,
+    category:"glass"
   },
  
   { _id:'5',
@@ -75,7 +79,8 @@ import braclet from '../images/braclet.jpg';
     rating:'1',
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:6
+    countInStock:6,
+    category:"house"
   },
   { _id:'6',
    seller:'Mounji',
@@ -88,7 +93,8 @@ import braclet from '../images/braclet.jpg';
     rating:5,
     numReviews:10,
     button: 'Ajouter au panier',
-    countInStock:10
+    countInStock:10,
+    category:"colier"
   }
 ]}
 ;

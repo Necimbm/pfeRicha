@@ -9,6 +9,9 @@ import { Link } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { detailsProduct } from 'actions/productActions';
 import data from '../ClientLandingPage/components/Products/data'
+import Navbar from 'views/ClientLandingPage/components/Navbar';
+
+
 
 
 export default function Descrption(props) {
@@ -17,8 +20,8 @@ export default function Descrption(props) {
   const [qty, setQty] = useState(1)
   const productlDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productlDetails;
-  const details=JSON.parse(localStorage.getItem('productsList'))
-  const productl = details.find(x => x._id === productlId);
+  
+  
  
   useEffect(() => {
     dispatch(detailsProduct(productlId));
@@ -27,38 +30,38 @@ export default function Descrption(props) {
   const addToCarthandler = () => {
     props.history.push(`/cart/${productlId}?qty=${qty}`)
   } 
-  return <div style={{padding:"2rem"}}>
-    {/* {loading ? (
+  return <div className="background" >
+    { loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (<div>
     
-     </div>)} */}
-    <a className="return" href='/acceuil'>Retourner à l'acceuil</a>
-    <div className="row top">
-
-
+     
+     <Navbar/>
+    <div className="row top" >
       <div className="col-1">
         <ProductCard>
-          <ProductImg src={productl.image} alt={productl.name}/>
+          <ProductImg src={product.image} alt={product.name}/>
         </ProductCard>
       </div>
-      <div className="col-1 ">
-        <div className="col-3 ">
+      <div className="col-1">
+        <div className="col-3">
+        <div className="card card-body ">
           <ul>
             <li >
-              <h1 >{productl.name}</h1>
+              <h1 >{product.name}</h1>
             </li>
             <li >
-              <Rating className="flex" rating={productl.rating} numReviews={productl.numReviews}></Rating>
+              <Rating className="flex" rating={product.rating} numReviews={product.numReviews}></Rating>
             </li>
-            <li className="row">Prix:<p>{productl.price} DT</p> </li>
+            <li className="row">Prix:<p>{product.price} DT</p> </li>
             <li className="row">Description:
-              <p>{productl.description}</p>
+              <p>{product.description}</p>
             </li>
 
           </ul>
+          </div>
         </div>
 
         <div className="col-3">
@@ -67,14 +70,14 @@ export default function Descrption(props) {
               <li>
                 <div className="row">
                   <div>Prix</div>
-                  <div className="price">{productl.price} DT</div>
+                  <div className="price">{product.price} DT</div>
                 </div>
               </li>
               <li>
                 <div className="row ">
                   <div>Status</div>
                   <div>
-                    {productl.countInStock > 0 ? (
+                    {product.countInStock > 0 ? (
                       <div className="success">DISPONIBLE</div>
                     ) : (
                       <div className="danger">NON DISPONIBLE</div>
@@ -82,7 +85,7 @@ export default function Descrption(props) {
                   </div>
                 </div>
               </li>
-              {productl.countInStock > 0 && (
+              {product.countInStock > 0 && (
                 <>
                   <li>
                     <div className="row">
@@ -93,7 +96,7 @@ export default function Descrption(props) {
                           onChange={(e) => setQty(e.target.value)}
                         >
                           {
-                            [...Array(productl.countInStock).keys()].map(x =>
+                            [...Array(product.countInStock).keys()].map(x =>
                             (
                               <option key={x + 1} value={x + 1}>
                                 {x + 1}
@@ -119,6 +122,7 @@ export default function Descrption(props) {
       </div>
 
     </div>
+    </div>)} 
   </div>
 
 }

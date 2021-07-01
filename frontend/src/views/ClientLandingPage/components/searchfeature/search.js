@@ -7,9 +7,9 @@ const {Search} = Input;
 function SearchFeature(props) {
     const [SeacrhTerms,setSearchTerms]= useState("")
     const onChangeSearch=  (event)=>{
-        props.onChangeSearch(SeacrhTerms);
-        setSearchTerms(event.currentTarget.value);
         
+        setSearchTerms(event.currentTarget.value);
+        props.refreshFunction(event.currentTarget.value);
     }
 
     return (

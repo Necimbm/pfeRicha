@@ -10,6 +10,7 @@ import {
     orderPayReducer,
     orderSummaryReducer,
   } from './reducers/orderReducers';
+  import {annonceListReducer} from './reducers/annonceListReducer'
   import {
     productCategoryListReducer,
     productCreateReducer,
@@ -20,8 +21,10 @@ import {
     productUpdateReducer,
   } from './reducers/productReducer';
   import {
-
-
+    matprodListReducer,
+ 
+  } from './reducers/MatProdReducer';
+  import {
 
     userSignupReducer,
     userSigninReducer,
@@ -31,17 +34,7 @@ import {
 import thunk from 'redux-thunk';
 
 const initialState = {
-    productList:{
-        productsList:localStorage.getItem('productsList')
-        ? JSON.parse(localStorage.getItem('productsList'))
-        :[],
-    },
-    userSignup:{
-        userInfo:localStorage.getItem('userInfo')
-        ? JSON.parse(localStorage.getItem('userInfo'))
-        :null,
-        
-    },
+
     userSignin:{
         userInfo:localStorage.getItem('userInfo')
         ? JSON.parse(localStorage.getItem('userInfo'))
@@ -62,6 +55,8 @@ const initialState = {
 };
 const reducer = combineReducers({
     productList: productListReducer,
+    MatproductList: matprodListReducer,
+    annonceList: annonceListReducer,
     productDetails: productDetailsReducer,
     cart: cartReducer,
     userSignin: userSigninReducer,

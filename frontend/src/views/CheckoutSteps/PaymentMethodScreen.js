@@ -23,10 +23,11 @@ export default function PaymentMethodScreen(props) {
   };
   return (
     <div>
-      <CheckoutSteps step1 step2 ></CheckoutSteps>
-      <form className="form" onSubmit={submitHandler}>
+      <CheckoutSteps step1 step2 /> 
+      <div  style={{backgroundImage:"url(/images/paiement.jpg)",backgroundSize:"cover",paddingBottom:"30.4rem"}}>
+      <form className="form card" onSubmit={submitHandler}>
         <div>
-          <h1>Méthode De Paiement</h1>
+          <h1 style={{fontFamily:"montserrat"}}>Méthode De Paiement </h1>
         </div>
         <div>
           <div>
@@ -38,7 +39,7 @@ export default function PaymentMethodScreen(props) {
               required
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
-            <label htmlFor="paypal">Carte Bancaire</label>
+            <label htmlFor="paypal">Carte Bancaire <i class="fas fa-credit-card"></i></label>
           </div>
         </div>
         <div>
@@ -51,7 +52,7 @@ export default function PaymentMethodScreen(props) {
               required
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
-            <label htmlFor="stripe">Paiement à la livraison</label>
+            <label htmlFor="stripe">Paiement à la livraison <i class="fas fa-shipping-fast"></i></label>
           </div>
         </div>
         
@@ -65,7 +66,7 @@ export default function PaymentMethodScreen(props) {
               required
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
-            <label htmlFor="stripe">PayPal</label>
+            <label htmlFor="stripe">PayPal <i class="fab fa-cc-paypal"></i></label>
           </div>
         </div>
         <div>
@@ -75,6 +76,9 @@ export default function PaymentMethodScreen(props) {
           </button>
         </div>
       </form>
+
+      </div>
+      
     </div>
   );
 }

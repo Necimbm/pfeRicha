@@ -22,8 +22,9 @@ export function SignupForm(props) {
   const { switchToSignin } = useContext(AccountContext);
   const { switchToAccountPro } = useContext(AccountContext);
   const [formData, setformData] = useState(null);
-  const userSignup = useSelector((state) => state.userSignup);
-  const { userInfo } = userSignup;
+
+  const userSignup = useSelector((state) => state.userRegister);
+  const { userInfo, loading, error } = userSignup;
 
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -51,6 +52,7 @@ export function SignupForm(props) {
   return (
     <BoxContainer2>
       <FormContainer2 onSubmit={handleSubmit}>
+      {error && <div style={{color:"red",fontSize:"10px",textAlign:"center",position:"absolute",left:"0",top:"0",marginTop:"18rem",marginLeft:"4rem",opacity:"50%"}}>{error}</div>}
         <Input2 type="text" name="name" placeholder="Prénom" onChange={handleChange} />
         <Input2 type="email" name="email" placeholder="Email" onChange={handleChange} />
         <Input2 type="password" name="password" placeholder="Mot de passe" onChange={handleChange} />

@@ -14,21 +14,21 @@ export default function OrderListScreen(props) {
     error: errorDelete,
     success: successDelete,
   } = orderDelete;
-  const ordersList = JSON.parse(localStorage.getItem('ordersList'))
-  console.log(ordersList);
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({ type: ORDER_DELETE_RESET });
+    dispatch(listOrders());
   }, [dispatch]);
   const deleteHandler = (order) => {
-    if (window.confirm('Are you sure to delete?')) {
+    if (window.confirm('Voulez-vous continuer ?')) {
       dispatch(deleteOrder(order._id));
+      dispatch(listOrders());
     }
   };
   return (
-    <div>
+    <div className="card card-body">
       <h1>COMMANDES</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
@@ -49,7 +49,7 @@ export default function OrderListScreen(props) {
             </tr>
           </thead>
           <tbody>
-            {ordersList.map((order) => (
+            {orderList.orders.map((order) => (
               <tr key={order._id}>
                 <td>{order.shippingAddress.fullName}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
@@ -59,19 +59,19 @@ export default function OrderListScreen(props) {
                 <td>
                   <button
                     type="button"
-                    className="small"
+                    className="primary small"
                     onClick={() => {
-                      props.orderProps.history.push(`/order/${order._id}`);
+                      props.orderProps.history.push(`/orders/${order._id}`);
                     }}
                   >
-                    Details
+                    Détailles
                   </button>
                   <button
                     type="button"
                     className="small"
                     onClick={() => deleteHandler(order)}
                   >
-                    Delete
+                    Effacer
                   </button>
                 </td>
               </tr>

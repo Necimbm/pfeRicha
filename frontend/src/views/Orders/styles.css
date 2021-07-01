@@ -249,7 +249,7 @@ justify-content: center;
 }
 .row.top {
 align-items: flex-start;
-margin-top:3rem;
+margin-top:1rem;
 }
 .row.start {
 justify-content: flex-start;
@@ -326,9 +326,10 @@ width: 100%;
 /* Card */
 .card {
 border: 0.1rem #c0c0c0 solid;
-background-color: #f8f8f8;
+background-color: #f8f8f8be;
 border-radius: 0.5rem;
 margin: 1rem;
+
 }
 .card-body {
 padding: 1rem;

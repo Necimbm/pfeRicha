@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ReactCircleModal from 'react-circle-modal'
+
 
 export const ProductsContainer = styled.div`
   width: 100%; 
@@ -38,6 +38,9 @@ export const ProductsHeading = styled.h1`
   font-size: clamp(2rem, 2.5vw, 3rem);
   text-align:center ;
   margin-bottom: 5rem;
+  color:#373a40;
+  font-family:"montserrat";
+  font-size:5rem;
 `;
 
 export const ProductTitle = styled.h2`

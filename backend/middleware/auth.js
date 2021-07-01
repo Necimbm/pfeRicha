@@ -24,19 +24,45 @@ module.exports =isAuth=function (req, res, next){
     }
   };
 
-module.exports = isAdmin = (req, res, next) => {
-    if (req.user && (req.user.role=3)) {
+module.exports = isArtisan = (req, res, next) => {
+    if (req.user && (req.user.role===2)) {
+      next();
+    } else {
+      res.status(401).send({ message: 'Invalid Artisan Token' });
+    }
+  };
+  module.exports = isAdmin = (req, res, next) => {
+    if (req.user && (req.user.role===3)) {
       next();
     } else {
       res.status(401).send({ message: 'Invalid Admin Token' });
     }
   };
-
+  module.exports = isClient = (req, res, next) => {
+    if (req.user && (req.user.role===0)) {
+      next();
+    } else {
+      res.status(401).send({ message: 'Invalid Client Token' });
+    }
+  };
   module.exports = isSeller = (req, res, next) => {
-    if (req.user && (req.user.role=1)) {
+    if (req.user && (req.user.role===1)) {
       next();
     } else {
       res.status(401).send({ message: 'Invalid Seller Token' });
+    }
+  };
+
+  module.exports = isSellerorArtisanorAdmin = (req, res, next) => {
+    if (req.user && (req.user.role===1)) {
+      next();
+    } else if(req.user.role===2){
+      next();
+          }else if(req.user.role===3){
+      next(); 
+    }else{
+      res.status(401).send({ message: 'Invalid Token' });
+
     }
   };
 

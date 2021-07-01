@@ -134,6 +134,7 @@ export const listOrders = () => async (dispatch, getState) => {
 };
 export const deleteOrder = (orderId) => async (dispatch, getState) => {
     dispatch({ type: ORDER_DELETE_REQUEST, payload: orderId });
+    
     const {
         userSignin: { userInfo },
     } = getState();
@@ -142,6 +143,7 @@ export const deleteOrder = (orderId) => async (dispatch, getState) => {
             headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch({ type: ORDER_DELETE_SUCCESS, payload: data });
+        localStorage.removeItem("ordersList");
     } catch (error) {
         const message =
             error.response && error.response.data.message

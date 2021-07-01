@@ -14,6 +14,16 @@ nav {
   padding: 16px 16px 0 16px;
   position: relative;
 }
+.menu2{
+  font-size:2rem;
+  width:100px;
+  position:absolute;
+  right:0;
+  top:0;
+  margin-bottom:3rem;
+  margin-right:10rem;
+
+}
 
 ol {
   width: 100%;
@@ -59,7 +69,7 @@ li span::before, li span::after {
 }
 
 .main-item:nth-of-type(1)::before,
-.main-item:nth-of-type(2)::before {
+.main-item:nth-of-type(2)::before,.main-item:nth-of-type(3)::before {
   top:0;
   height:50px;
   z-index: 100;
@@ -120,7 +130,7 @@ li span::before, li span::after {
           animation: fade 0.5s ease 0.4s both;
 }
 
-.sub-item:nth-of-type(1) {
+.sub-item:nth-of-type(3) {
   -webkit-animation: fade 0.5s ease 0.6s both;
           animation: fade 0.5s ease 0.6s both;
 }
@@ -185,7 +195,7 @@ li span::before, li span::after {
 }
 
 .special::before, .special::after {
-  content: "special kabobs";
+  content: "Commandes";
 }
 
 .main-item:nth-of-type(1):hover::before,
@@ -224,13 +234,4 @@ li span::before, li span::after {
   .sub-menu li:hover span {
     transform: var(--xm90);
   }
-}
-.menu{
-  width:100px;
-  position:absolute;
-  right:0;
-  top:0;
-  margin-bottom:3rem;
-  margin-right:10rem;
-
 }

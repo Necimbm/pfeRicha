@@ -53,7 +53,7 @@ useEffect(()=>{
   if(localStorage.getItem('userInfo')){
     switch(JSON.parse(localStorage.getItem('userInfo')).payload.user.role){
       case 0 :return props.propsLogin.history.push('/acceuil');
-      case 1 :return props.propsLogin.history.push('/fournisseur');
+      case 1 :return props.propsLogin.history.push('/fournisseurAcceuil');
       case 2 :return props.propsLogin.history.push('/artisanAcceuil');
       case 3 :return props.propsLogin.history.push('/admin');
       default:;
@@ -70,6 +70,7 @@ useEffect(()=>{
 
 
   return (
+    
     <BoxContainer>
         
       <FormContainer onSubmit={handleSubmit}> 

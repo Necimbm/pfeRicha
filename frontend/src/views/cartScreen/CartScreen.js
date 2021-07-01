@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Navbar from 'views/ClientLandingPage/components/Navbar';
-import { Nav } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
+import { CartIcon } from 'views/ClientLandingPage/components/Navbar/NavbarElements';
 import { addToCart, removeFromCart } from '../../actions/cartActions';
 import MessageBox from '../components/MessageBox';
 import './styles.css'
@@ -36,15 +36,16 @@ export default function CartScreen(props) {
     props.history.push('/shipping');
   };
   return (<div>
-<a className="return" href='/acceuil'>Retourner à l'acceuil</a>
-    <div className="row top">
+<Navbar/>
+<h1 style={{fontFamily:"montserrat",fontSize:"5rem",fontWeight:"1000",marginTop:"5rem"}}>Panier <fa CartPlus/></h1>
+    <div className="row top" style={{paddingTop:"5rem"}}>
     
       <div className="col-2">
-        <h1>Shopping Cart</h1>
+        
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         {cartItems.length === 0 ? (
           <MessageBox>
-            Cart is empty. <Link to="/acceuil">Go Shopping</Link>
+           Panier est vide. <Link to="/acceuil">Commencer vos achats</Link>
           </MessageBox>
         ) : (
           <ul>
@@ -82,7 +83,7 @@ export default function CartScreen(props) {
                       type="button"
                       onClick={() => removeFromCartHandler(item.product)}
                     >
-                      Delete
+                      Annuler
                     </button>
                   </div>
                 </div>
@@ -107,7 +108,7 @@ export default function CartScreen(props) {
                 className="primary block"
                 disabled={cartItems.length === 0}
               >
-                Proceed to Checkout
+                Continuer vers 
               </button>
             </li>
           </ul>

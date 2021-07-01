@@ -74,7 +74,7 @@ const orderSchema = new mongoose.Schema({
 
 },{
   timestamps:true,
-})
+});
 
 /*const orderSchema = new mongoose.Schema({
   cart:{

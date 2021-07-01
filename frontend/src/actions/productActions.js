@@ -51,7 +51,7 @@ export const listProductCategories = () => async (dispatch) => {
 export const detailsProduct = (productId) => async (dispatch) => {
   dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
   try {
-    const { data } = await Axios.get(`/api/products/${productId}`);
+    const { data } = await Axios.get(`/api/product/${productId}`);
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
      localStorage.setItem("productsList",JSON.stringify(data));
   } catch (error) {

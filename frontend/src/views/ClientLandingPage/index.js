@@ -1,31 +1,44 @@
 
-import { listProducts } from 'actions/productActions';
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import Filter from "./components/filter/filter"
+import { useDispatch, useSelector} from 'react-redux';
 import styled from "styled-components";
-import LoadingBox from 'views/components/LoadingBox';
-import MessageBox from 'views/components/MessageBox';
 import Footer from './components/Footer';
 import Navbar  from "./components/Navbar/index";
+import img from "images/richabg.jpg"
 import Products from './components/Products';
-import data from './components/Products/data'
+import { listProducts } from 'actions/productActions';
+import LoadingBox from 'views/components/LoadingBox';
+import MessageBox from 'views/components/MessageBox';
+import ErreurBox from 'views/components/errorPage';
 
 const AppContainer = styled.div` 
+ background-color:#fff;
 `;
 
 function App(props) {
   const dispatch = useDispatch();
-  const productList = JSON.parse(localStorage.getItem('productsList'))
+ 
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
+ 
   useEffect(() => {
-    
+    dispatch(listProducts({}));
   }, [dispatch]);
-
-  return (
+  return (<div>
+  { loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <ErreurBox variant="danger">{error}</ErreurBox>
+      ) : (<div>
         <AppContainer>
+        
         <Navbar props={props}/>
-     <Products heading='Votre meilleur choix' data={productList}/>
+     <Products heading='Votre meilleur choix' data={products}/>
      <Footer/>
      </AppContainer>
+     </div>)} 
+     </div>
   );
 }
 

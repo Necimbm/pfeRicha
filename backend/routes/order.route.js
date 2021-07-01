@@ -3,7 +3,7 @@ const Mailgun = require('mailgun-js');
 const expressAsyncHandler = require('express-async-handler');
 const isAdmin =require('../middleware/auth');
 const isAuth =require('../middleware/auth');
-
+const isSellerorArtisanorAdmin = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -42,7 +42,7 @@ router.post('/',expressAsyncHandler(async(req,res)=>{
 }
 }));
 
-router.use(
+router.get(
   '/:id',
   expressAsyncHandler(async (req, res,next) => {
     Order.findOne({
@@ -59,18 +59,20 @@ router.use(
 })
   );
 
- router.delete('/:id', isAuth, isAdmin, expressAsyncHandler(async (req, res) => {
-      const order = await Order.findById(req.params.id);
-      if (order) {
-        const deleteOrder = await order.remove();
-        res.send({ message: 'Order Deleted', order: deleteOrder });
-      } else {
-        res.status(404).send({ message: 'Order Not Found' });
-      }
-    })
-  );
- 
-  
+  router.delete('/:id', expressAsyncHandler(async (req, res) => {
+
+    const order = await Order.findById(req.params.id);
+   
+    if (!order) {
+      
+      res.status(404).send({ message: 'Order Not Found' });
+    }
+  await order.remove();
+  res.status(200).json({ message: 'Order Deleted', success:true });
+    
+  })
+);
+
 
 
 module.exports = router

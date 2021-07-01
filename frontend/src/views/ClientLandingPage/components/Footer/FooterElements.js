@@ -2,11 +2,12 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.footer`
-  background-color: #373a40;
+  background-color: transparent;
 `;
 
 export const FooterWrap = styled.div`
-  
+  position: relative;
+  right:0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,11 +22,11 @@ export const SocialMedia = styled.section`
 `;
 
 export const SocialMediaWrap = styled.div`
-  display: flex;
+  display: flex ;
   justify-content: space-between;
   align-items: center;
   max-width: 1100px;
-  margin: 16px auto 0 auto;
+  margin: 16px 0 0 0;
 
   @media screen and (max-width: 820px) {
     flex-direction: column;
@@ -33,15 +34,18 @@ export const SocialMediaWrap = styled.div`
 `;
 
 export const SocialLogo = styled(Link)`
-color:#feddbe;
+color:#000;
   justify-self: start;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 5rem;
   display: flex;
   align-items: center;
   margin-bottom: 16px;
   font-weight: bold;
+  font-family:"montserrat";
+  position: absolute;
+  left:0;
 `;
 
 export const SocialIcons = styled.div`
@@ -49,9 +53,15 @@ export const SocialIcons = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 240px;
+  position: absolute;
+  right:0;
+  botttom:0;
+
 `;
 
 export const SocialIconLink = styled.a`
-  color: #fff;
+margin-left:2rem;
+  color: #000;
   font-size: 24px;
+  
 `;

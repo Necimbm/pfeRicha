@@ -6,8 +6,8 @@ import { FeatureContainer, FeatureButton } from './FeatureElements';
 const Feature = () => {
   return (
     <FeatureContainer>
-      <h1>Article de jour</h1>
-      <p>moquette 5x10m juste pour 500DT</p>
+      <h1 style={{fontFamily:"montserrat"}}>Article de jour</h1>
+      <p style={{fontFamily:"montserrat"}}>moquette 5x10m juste pour 500DT</p>
       
       <ReactCircleModal 
       backgroundColor="rgba(166, 174, 179, 0.61)  "

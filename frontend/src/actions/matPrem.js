@@ -1,48 +1,48 @@
 import Axios from 'axios';
 import {
-  PRODUCT_CREATE_FAIL,
-  PRODUCT_CREATE_REQUEST,
-  PRODUCT_CREATE_SUCCESS,
-  PRODUCT_DETAILS_FAIL,
-  PRODUCT_DETAILS_REQUEST,
-  PRODUCT_DETAILS_SUCCESS,
-  PRODUCT_LIST_FAIL,
-  PRODUCT_LIST_REQUEST,
-  PRODUCT_LIST_SUCCESS,
-  PRODUCT_UPDATE_REQUEST,
-  PRODUCT_UPDATE_SUCCESS,
-  PRODUCT_UPDATE_FAIL,
-  PRODUCT_DELETE_REQUEST,
-  PRODUCT_DELETE_FAIL,
-  PRODUCT_DELETE_SUCCESS,
-  PRODUCT_CATEGORY_LIST_SUCCESS,
-  PRODUCT_CATEGORY_LIST_REQUEST,
-  PRODUCT_CATEGORY_LIST_FAIL,
-  PRODUCT_REVIEW_CREATE_REQUEST,
-  PRODUCT_REVIEW_CREATE_SUCCESS,
-  PRODUCT_REVIEW_CREATE_FAIL,
-} from '../constants/productConstants';
+  MATPROD_CREATE_FAIL,
+  MATPROD_CREATE_REQUEST,
+  MATPROD_CREATE_SUCCESS,
+  MATPROD_DETAILS_FAIL,
+  MATPROD_DETAILS_REQUEST,
+  MATPROD_DETAILS_SUCCESS,
+  MATPROD_LIST_FAIL,
+  MATPROD_LIST_REQUEST,
+  MATPROD_LIST_SUCCESS,
+  MATPROD_UPDATE_REQUEST,
+  MATPROD_UPDATE_SUCCESS,
+  MATPROD_UPDATE_FAIL,
+  MATPROD_DELETE_REQUEST,
+  MATPROD_DELETE_FAIL,
+  MATPROD_DELETE_SUCCESS,
+  MATPROD_CATEGORY_LIST_SUCCESS,
+  MATPROD_CATEGORY_LIST_REQUEST,
+  MATPROD_CATEGORY_LIST_FAIL,
+  MATPROD_REVIEW_CREATE_REQUEST,
+  MATPROD_REVIEW_CREATE_SUCCESS,
+  MATPROD_REVIEW_CREATE_FAIL,
+} from '../constants/matprodConstants';
 
-export const listProducts = () => async (dispatch) => {
+export const listmatprod = () => async (dispatch) => {
   dispatch({
-    type: PRODUCT_LIST_REQUEST,
+    type: MATPROD_LIST_REQUEST,
   });
   try {
-    const { data } = await Axios.get(`/api/products`);
-    dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
+    const { data } = await Axios.get(`/api/materialsProd`);
+    dispatch({ type: MATPROD_LIST_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: PRODUCT_LIST_FAIL, payload: error.message });
+    dispatch({ type: MATPROD_LIST_FAIL, payload: error.message });
   }
 };
 
 export const listProductCategories = () => async (dispatch) => {
   dispatch({
-    type: PRODUCT_CATEGORY_LIST_REQUEST,
+    type: MATPROD_CATEGORY_LIST_REQUEST,
   });
   try {
     const { data } = await Axios.get(`/api/products/categories`);
-    dispatch({ type: PRODUCT_CATEGORY_LIST_SUCCESS, payload: data });
+    dispatch({ type: MATPROD_CATEGORY_LIST_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: PRODUCT_CATEGORY_LIST_FAIL, payload: error.message });
+    dispatch({ type: MATPROD_CATEGORY_LIST_FAIL, payload: error.message });
   }
 };

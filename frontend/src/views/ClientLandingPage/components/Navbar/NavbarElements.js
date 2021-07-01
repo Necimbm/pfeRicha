@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   font-weight: 700;
-  position:fixed;
+  position:relative;
   z-index:1;
   background-color:#373a40 ;
   color:white;
